@@ -281,6 +281,7 @@
 
         function updateHole(num, element) {
             const data = courseData[num];
+            document.getElementById('display-img').src = data.img;
             document.getElementById('display-name').innerText = data.name;
             document.getElementById('display-w').innerText = data.w;
             document.getElementById('display-y').innerText = data.y;
