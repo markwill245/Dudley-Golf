@@ -71,20 +71,23 @@
                 <div id="hole-nav-container"></div>
             </div>
             <div class="md:w-2/3 bg-white border border-gray-100 shadow-2xl overflow-hidden flex flex-col rounded-sm" id="display-area">
-                <div class="h-1/2 overflow-hidden">
-                    <img id="h-img" src="" class="w-full h-full object-cover">
+                <div class="h-1/2 overflow-hidden bg-gray-100">
+                    <img id="h-img" src="" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80'">
                 </div>
                 <div class="p-10 flex flex-col justify-center h-1/2">
                     <div class="flex justify-between items-start mb-4">
                         <h3 id="h-name" class="serif text-4xl text-forest"></h3>
                         <span id="h-num" class="serif text-5xl text-gold/20 italic"></span>
                     </div>
-                    <div class="flex gap-10 mb-6 border-b border-gray-100 pb-4">
-                        <div><p class="text-[9px] uppercase text-gray-400">Par</p><p id="h-par" class="text-xl font-semibold"></p></div>
-                        <div><p class="text-[9px] uppercase text-gray-400">Yards</p><p id="h-yards" class="text-xl font-semibold"></p></div>
-                        <div><p class="text-[9px] uppercase text-gray-400">S.I.</p><p id="h-si" class="text-xl font-semibold"></p></div>
+                    
+                    <div class="grid grid-cols-4 gap-4 mb-6 border-y border-gray-100 py-4">
+                        <div><p class="text-[9px] uppercase text-gray-400 mb-1">Par / SI</p><p id="h-par-si" class="text-sm font-semibold"></p></div>
+                        <div class="text-center"><p class="text-[9px] uppercase text-gray-400 mb-1">White</p><p id="h-white" class="text-sm font-bold text-gray-800"></p></div>
+                        <div class="text-center"><p class="text-[9px] uppercase text-gray-400 mb-1">Yellow</p><p id="h-yellow" class="text-sm font-bold text-amber-500"></p></div>
+                        <div class="text-center"><p class="text-[9px] uppercase text-gray-400 mb-1">Red</p><p id="h-red" class="text-sm font-bold text-red-600"></p></div>
                     </div>
-                    <p id="h-desc" class="text-gray-500 italic mb-6"></p>
+
+                    <p id="h-desc" class="text-gray-500 italic mb-6 text-sm"></p>
                     <div class="bg-forest p-4 text-white text-xs border-l-4 border-gold">
                         <strong class="text-gold uppercase tracking-tighter block mb-1">Pro Tip:</strong>
                         <span id="h-tip"></span>
@@ -100,8 +103,7 @@
                 <h2 class="serif text-5xl mb-4 text-gold">Membership Tiers</h2>
                 <p class="text-gray-400 uppercase tracking-widest text-[10px]">A Legacy Since 1893</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8" id="membership-grid">
-                </div>
+            <div class="grid md:grid-cols-3 gap-8" id="membership-grid"></div>
         </div>
     </section>
 
@@ -110,25 +112,26 @@
     </footer>
 
     <script>
+        // FIXED DATA OBJECT (Corrected commas and image paths)
         const courseData = {
-            1: { name: "Hole 1: The Dog-Leg",img: "images/hole1.webp" w: 483, y: 473, r: 464, par: 5, si: 9, tip: "A straight tee shot is required to a long left sweeping fairway.", desc: "A challenging start to the round requiring precision from the tee." },
-            2: { name: "Hole 2: Risk & Reward",img: "images/hole2.webp" w: 257, y: 251, r: 167, par: "4/3", si: "17/11", tip: "A steady tee shot followed by an accurate pitch to a narrow raised green.", desc: "Test your nerve on this tactical short hole." },
-            3: { name: "Hole 3: Marker Pole",img: "images/hole3.webp" w: 443, y: 433, r: 421, par: "4/5", si: 1, tip: "A difficult blind straight tee shot. The further the drive, the narrower the fairway becomes.", desc: "Take note of the horizontal dry ditch across the fairway." },
-            4: { name: "Hole 4: The Stamp",img: "images/hole4.webp" w: 143, y: 131, r: 119, par: 3, si: 13, tip: "Our own postage stamp hole with a bunker across the front to contend with.", desc: "Short but dangerous. Club selection is everything." },
-            5: { name: "Hole 5: The Plateau",img: "images/hole5.webp" w: 425, y: 415, r: 334, par: 4, si: "3/17", tip: "Steady shot onto the top of a plateau fairway with a downhill shot onto the green.", desc: "The first hole of our famous 'Amen Corner'." },
-            6: { name: "Hole 6: Hells Corner",img: "images/hole6.webp" w: 182, y: 174, r: 159, par: 3, si: "7/9", tip: "A long difficult hole to a right to left sloping green.", desc: "The second challenge of Amen Corner." },
-            7: { name: "Hole 7: The Bank",img: "images/hole7.webp" w: 199, y: 180, r: 150, par: 3, si: "5/7", tip: "Probably the most difficult of the three with very little room for manoeuvre.", desc: "The finale of Amen Corner." },
-            8: { name: "Hole 8: The Summit",img: "images/hole8.webp" w: 298, y: 291, r: 272, par: 4, si: "15/5", tip: "Outstanding views across several counties.", desc: "The peak of the course with breathtaking panoramas." },
-            9: { name: "Hole 9: Devils Horns",img: "images/hole9.webp" w: 388, y: 382, r: 314, par: 4, si: "11/15", tip: "Keep your tee shot slightly left. Everything falls right onto the green.", desc: "A tight fairway that tests your ability to play the slopes." },
-            10: { name: "Hole 10: The Dell",img: "images/hole10.webp" w: 322, y: 310, r: 251, par: 4, si: "16/14", tip: "A straight forward hole onto a slightly raised green.", desc: "Accuracy is rewarded on this scenic par 4." },
-            11: { name: "Hole 11: The Trap",img: "images/hole11.webp" w: 173, y: 163, r: 105, par: 3, si: "10/18", tip: "A straightaway shot with bunkers either side to be aware of.", desc: "Stay centered to avoid the sand traps." },
-            12: { name: "Hole 12: Calm",img: "images/hole12.webp" w: 269, y: 264, r: 258, par: 4, si: "18/16", tip: "Possible to hit the green with a good tee shot if the wind is behind.", desc: "A generous fairway offering a real birdie opportunity." },
-            13: { name: "Hole 13: Blind Ascent",img: "images/hole13.webp" w: 523, y: 452, r: 442, par: 5, si: "6/8", tip: "A late dogleg left after one or two downhill shots.", desc: "A long journey home requiring strong ball striking." },
-            14: { name: "Hole 14: The Snap",img: "images/hole14.webp" w: 174, y: 168, r: 154, par: 3, si: "14/12", tip: "A slightly downhill green requires an accurate tee shot for par.", desc: "A beautiful drop shot par 3." },
-            15: { name: "Hole 15: The Climb",img: "images/hole15.webp" w: 304, y: 298, r: 294, par: 4, si: "8/2", tip: "Short par four but uphill ground makes it longer than you think.", desc: "Don't let the yardage fool you." },
-            16: { name: "Hole 16: High Pressure",img: "images/hole16.webp" w: 436, y: 430, r: 419, par: "4/5", si: "2/4", tip: "A very tough long hole with a ditch coming into play.", desc: "Tests your nerve and power." },
-            17: { name: "Hole 17: The Firs",img: "images/hole17.webp" w: 416, y: 406, r: 392, par: "4/5", si: "4/10", tip: "A par requires four very good shots.", desc: "A demanding hole as you approach the clubhouse." },
-            18: { name: "Hole 18: The Finale",img: "images/hole18.webp" w: 318, y: 308, r: 298, par: 4, si: "12/6", tip: "A slight dogleg right brings you home.", desc: "A classic finishing hole in front of the members." }
+            1: { name: "The Dog-Leg", img: "images/hole1.webp", w: 483, y: 473, r: 464, par: 5, si: 9, tip: "A straight tee shot is required to a long left sweeping fairway.", desc: "A challenging start to the round requiring precision from the tee." },
+            2: { name: "Risk & Reward", img: "images/hole2.webp", w: 257, y: 251, r: 167, par: "4/3", si: "17/11", tip: "A steady tee shot followed by an accurate pitch to a narrow raised green.", desc: "Test your nerve on this tactical short hole." },
+            3: { name: "Marker Pole", img: "images/hole3.webp", w: 443, y: 433, r: 421, par: "4/5", si: 1, tip: "A difficult blind straight tee shot. The further the drive, the narrower the fairway becomes.", desc: "Take note of the horizontal dry ditch across the fairway." },
+            4: { name: "The Stamp", img: "images/hole4.webp", w: 143, y: 131, r: 119, par: 3, si: 13, tip: "Our own postage stamp hole with a bunker across the front to contend with.", desc: "Short but dangerous. Club selection is everything." },
+            5: { name: "The Plateau", img: "images/hole5.webp", w: 425, y: 415, r: 334, par: 4, si: "3/17", tip: "Steady shot onto the top of a plateau fairway with a downhill shot onto the green.", desc: "The first hole of our famous 'Amen Corner'." },
+            6: { name: "Hells Corner", img: "images/hole6.webp", w: 182, y: 174, r: 159, par: 3, si: "7/9", tip: "A long difficult hole to a right to left sloping green.", desc: "The second challenge of Amen Corner." },
+            7: { name: "The Bank", img: "images/hole7.webp", w: 199, y: 180, r: 150, par: 3, si: "5/7", tip: "Probably the most difficult of the three with very little room for manoeuvre.", desc: "The finale of Amen Corner." },
+            8: { name: "The Summit", img: "images/hole8.webp", w: 298, y: 291, r: 272, par: 4, si: "15/5", tip: "Outstanding views across several counties.", desc: "The peak of the course with breathtaking panoramas." },
+            9: { name: "Devils Horns", img: "images/hole9.webp", w: 388, y: 382, r: 314, par: 4, si: "11/15", tip: "Keep your tee shot slightly left. Everything falls right onto the green.", desc: "A tight fairway that tests your ability to play the slopes." },
+            10: { name: "The Dell", img: "images/hole10.webp", w: 322, y: 310, r: 251, par: 4, si: "16/14", tip: "A straight forward hole onto a slightly raised green.", desc: "Accuracy is rewarded on this scenic par 4." },
+            11: { name: "The Trap", img: "images/hole11.webp", w: 173, y: 163, r: 105, par: 3, si: "10/18", tip: "A straightaway shot with bunkers either side to be aware of.", desc: "Stay centered to avoid the sand traps." },
+            12: { name: "Calm", img: "images/hole12.webp", w: 269, y: 264, r: 258, par: 4, si: "18/16", tip: "Possible to hit the green with a good tee shot if the wind is behind.", desc: "A generous fairway offering a real birdie opportunity." },
+            13: { name: "Blind Ascent", img: "images/hole13.webp", w: 523, y: 452, r: 442, par: 5, si: "6/8", tip: "A late dogleg left after one or two downhill shots.", desc: "A long journey home requiring strong ball striking." },
+            14: { name: "The Snap", img: "images/hole14.webp", w: 174, y: 168, r: 154, par: 3, si: "14/12", tip: "A slightly downhill green requires an accurate tee shot for par.", desc: "A beautiful drop shot par 3." },
+            15: { name: "The Climb", img: "images/hole15.webp", w: 304, y: 298, r: 294, par: 4, si: "8/2", tip: "Short par four but uphill ground makes it longer than you think.", desc: "Don't let the yardage fool you." },
+            16: { name: "High Pressure", img: "images/hole16.webp", w: 436, y: 430, r: 419, par: "4/5", si: "2/4", tip: "A very tough long hole with a ditch coming into play.", desc: "Tests your nerve and power." },
+            17: { name: "The Firs", img: "images/hole17.webp", w: 416, y: 406, r: 392, par: "4/5", si: "4/10", tip: "A par requires four very good shots.", desc: "A demanding hole as you approach the clubhouse." },
+            18: { name: "The Finale", img: "images/hole18.webp", w: 318, y: 308, r: 298, par: 4, si: "12/6", tip: "A slight dogleg right brings you home.", desc: "A classic finishing hole in front of the members." }
         };
 
         const membershipData = [
@@ -137,7 +140,6 @@
             { name: "Junior Member", price: "£50", period: "per year", desc: "Under 18s. Supporting the future of the game." }
         ];
 
-        // CLOCK
         function updateClock() {
             const now = new Date();
             document.getElementById('live-clock').innerText = now.toLocaleString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
@@ -145,18 +147,24 @@
         }
         setInterval(updateClock, 1000); updateClock();
 
-        // HOLE NAV
         const navCont = document.getElementById('hole-nav-container');
         function setHole(n) {
             const h = courseData[n];
             document.getElementById('h-num').innerText = n.toString().padStart(2, '0');
             document.getElementById('h-name').innerText = h.name;
-            document.getElementById('h-par').innerText = h.par;
-            document.getElementById('h-yards').innerText = h.w;
-            document.getElementById('h-si').innerText = h.si;
+            
+            // YARDAGE LOGIC
+            document.getElementById('h-par-si').innerText = `Par ${h.par} / SI ${h.si}`;
+            document.getElementById('h-white').innerText = `${h.w} yds`;
+            document.getElementById('h-yellow').innerText = `${h.y} yds`;
+            document.getElementById('h-red').innerText = `${h.r} yds`;
+            
             document.getElementById('h-desc').innerText = h.desc;
             document.getElementById('h-tip').innerText = h.tip;
+            
+            // Corrected Photo Script: ensures it looks for images/holeX.webp
             document.getElementById('h-img').src = h.img;
+            
             document.querySelectorAll('.hole-card').forEach(c => c.classList.remove('active'));
             document.getElementById(`h-${n}`).classList.add('active');
         }
@@ -165,13 +173,12 @@
             const div = document.createElement('div');
             div.id = `h-${i}`;
             div.className = "hole-card p-4 border border-gray-100 cursor-pointer transition-all";
-            div.innerHTML = `<p class="text-[10px] uppercase font-bold tracking-widest">Hole ${i}</p><p class="serif italic text-gray-400">${courseData[i].name}</p>`;
+            div.innerHTML = `<p class="text-[10px] uppercase font-bold tracking-widest">Hole ${i}</p><p class="serif italic text-gray-400">${courseData[i].name.split(': ')[1] || courseData[i].name}</p>`;
             div.onclick = () => setHole(i);
             navCont.appendChild(div);
         }
         setHole(1);
 
-        // MEMBERSHIP LOAD
         const mGrid = document.getElementById('membership-grid');
         membershipData.forEach(m => {
             mGrid.innerHTML += `
