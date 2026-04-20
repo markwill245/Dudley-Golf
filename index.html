@@ -149,25 +149,25 @@
 
         const navCont = document.getElementById('hole-nav-container');
         function setHole(n) {
-            const h = courseData[n];
-            document.getElementById('h-num').innerText = n.toString().padStart(2, '0');
-            document.getElementById('h-name').innerText = h.name;
-            
-            // YARDAGE LOGIC
-            document.getElementById('h-par-si').innerText = `Par ${h.par} / SI ${h.si}`;
-            document.getElementById('h-white').innerText = `${h.w} yds`;
-            document.getElementById('h-yellow').innerText = `${h.y} yds`;
-            document.getElementById('h-red').innerText = `${h.r} yds`;
-            
-            document.getElementById('h-desc').innerText = h.desc;
-            document.getElementById('h-tip').innerText = h.tip;
-            
-            // Corrected Photo Script: ensures it looks for images/holeX.webp
-            document.getElementById('h-img').src = h.img;
-            
-            document.querySelectorAll('.hole-card').forEach(c => c.classList.remove('active'));
-            document.getElementById(`h-${n}`).classList.add('active');
-        }
+    const h = courseData[n];
+    document.getElementById('h-num').innerText = n.toString().padStart(2, '0');
+    document.getElementById('h-name').innerText = h.name;
+    
+    // Yardage Logic
+    document.getElementById('h-par-si').innerText = `Par ${h.par} / SI ${h.si}`;
+    document.getElementById('h-white').innerText = `${h.w} yds`;
+    document.getElementById('h-yellow').innerText = `${h.y} yds`;
+    document.getElementById('h-red').innerText = `${h.r} yds`;
+    
+    document.getElementById('h-desc').innerText = h.desc;
+    document.getElementById('h-tip').innerText = h.tip;
+    
+    // CHANGE THIS LINE: Add './' to the start of the path
+    document.getElementById('h-img').src = './' + h.img;
+    
+    document.querySelectorAll('.hole-card').forEach(c => c.classList.remove('active'));
+    document.getElementById(`h-${n}`).classList.add('active');
+}
 
         for (let i = 1; i <= 18; i++) {
             const div = document.createElement('div');
