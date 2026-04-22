@@ -34,26 +34,28 @@
     </div>
 
     <nav class="sticky top-0 w-full z-50 px-8 py-4 flex justify-between items-center text-white nav-blur border-b border-white/10">
-    <a href="#" class="flex flex-col relative z-50">
-        <span class="serif text-2xl tracking-widest leading-none">DUDLEY</span>
-        <span class="text-[8px] tracking-[0.4em] uppercase text-[#C5A367]">Golf Club Est. 1893</span>
-    </a>
+        <a href="#" class="flex flex-col relative z-50">
+            <span class="serif text-2xl tracking-widest leading-none">DUDLEY</span>
+            <span class="text-[8px] tracking-[0.4em] uppercase text-[#C5A367]">Golf Club Est. 1893</span>
+        </a>
 
-    <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-50 focus:outline-none p-2">
-        <div class="w-6 h-0.5 bg-[#C5A367]"></div>
-        <div class="w-6 h-0.5 bg-[#C5A367]"></div>
-        <div class="w-6 h-0.5 bg-[#C5A367]"></div>
-    </button>
+        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-50 focus:outline-none p-2">
+            <div class="w-6 h-0.5 bg-[#C5A367]"></div>
+            <div class="w-6 h-0.5 bg-[#C5A367]"></div>
+            <div class="w-6 h-0.5 bg-[#C5A367]"></div>
+        </button>
 
-    <div id="nav-links" class="fixed inset-0 bg-[#132419] flex flex-col items-center justify-center gap-8 text-[12px] uppercase tracking-[0.4em] font-semibold transition-transform duration-300 translate-x-full md:relative md:inset-auto md:bg-transparent md:flex-row md:translate-x-0 md:gap-10 md:text-[10px] md:tracking-[0.2em] z-40">
-        <a href="#" class="hover:text-[#C5A367] transition">Home</a>
-        <a href="#course" class="hover:text-[#C5A367] transition">Course Guide</a>
-        <a href="#visitors" class="hover:text-[#C5A367] transition">Visitors</a>
-        <a href="#membership" class="hover:text-[#C5A367] transition">Membership</a>
-    </div>
+        <div id="nav-links" class="fixed inset-0 bg-[#132419] flex flex-col items-center justify-center gap-8 text-[12px] uppercase tracking-[0.4em] font-semibold transition-transform duration-300 translate-x-full md:relative md:inset-auto md:bg-transparent md:flex-row md:translate-x-0 md:gap-10 md:text-[10px] md:tracking-[0.2em] z-40">
+            <a href="#" class="hover:text-[#C5A367] transition">Home</a>
+            <a href="#course" class="hover:text-[#C5A367] transition">Course Guide</a>
+            <a href="#heritage" class="hover:text-[#C5A367] transition">History</a>
+            <a href="#visitors" class="hover:text-[#C5A367] transition">Visitors</a>
+            <a href="#membership" class="hover:text-[#C5A367] transition">Membership</a>
+        </div>
 
-    <a href="https://www.dudleygolfclub.com/login.php" target="_blank" class="relative z-50 border border-[#C5A367] text-[#C5A367] px-4 md:px-5 py-2 text-[8px] md:text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition">Member Login</a>
-</nav>
+        <a href="https://www.dudleygolfclub.com/login.php" target="_blank" class="relative z-50 border border-[#C5A367] text-[#C5A367] px-4 md:px-5 py-2 text-[8px] md:text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition">Member Login</a>
+    </nav>
+
     <header class="hero-bg h-[70vh] flex items-center justify-center text-center text-white">
         <div class="max-w-4xl px-4">
             <h1 class="text-6xl md:text-9xl font-light mb-6 tracking-tighter">Heritage in every <span class="italic">detail.</span></h1>
@@ -77,6 +79,42 @@
         </div>
     </section>
 
+    <section id="heritage" class="bg-[#f9f7f2] py-24 px-4 border-t border-gray-200 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -top-10 -left-10 w-64 h-64 bg-[#C5A367]/5 rounded-full blur-3xl"></div>
+                    <div class="relative bg-white p-2 shadow-2xl border border-gray-100 rotate-1 hover:rotate-0 transition-transform duration-500">
+                        <img src="images/heritage-dudley.webp" alt="Old Tom Morris Dudley Golf Club" class="w-full h-auto grayscale hover:grayscale-0 transition duration-700">
+                        <div class="p-6 text-center">
+                            <p class="serif italic text-gray-500">The legendary Old Tom Morris, Designer of Dudley Golf Club</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="serif text-6xl text-[#132419] mb-2">Our Story</h2>
+                        <p class="text-[#C5A367] font-bold tracking-[0.3em] uppercase text-[10px]">Designed by Greatness • Est. 1893</p>
+                    </div>
+                    <div class="space-y-6 text-[#132419]/80 leading-relaxed serif text-xl italic">
+                        <p>In 1893, Canon Adam Gray Maitland arrived from Scotland to find a void in the Black Country: the absence of the "Royal and Ancient game." He set his sights on 'The Old Park' and called upon a legend.</p>
+                        <p><span class="text-[#132419] font-bold not-italic">Old Tom Morris</span>—the architect of Muirfield, Prestwick, and Carnoustie—personally designed the original course, establishing a standard of excellence that remains today.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-8 border-y border-[#C5A367]/20 py-8">
+                        <div>
+                            <h4 class="text-[10px] uppercase tracking-widest font-bold text-[#C5A367] mb-2">The Ascent</h4>
+                            <p class="text-sm">Located on the Rough Hills, our course is built on volcanic rock covered in thousands of years of soft, fine grass.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-[10px] uppercase tracking-widest font-bold text-[#C5A367] mb-2">The Vista</h4>
+                            <p class="text-sm">From the 8th green, look East. On a clear day, there is nothing higher until you reach the Ural Mountains in Russia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="course" class="max-w-7xl mx-auto px-4 py-20">
         <div class="flex flex-col md:flex-row gap-8">
             <div class="md:w-1/3">
@@ -94,7 +132,6 @@
                             <h3 id="h-name" class="serif text-4xl md:text-5xl text-white uppercase tracking-tight"></h3>
                             <span id="h-num" class="serif text-5xl md:text-6xl text-[#C5A367] italic leading-none opacity-80"></span>
                         </div>
-                        
                         <div class="grid grid-cols-4 gap-2 mb-10 border-y border-[#C5A367]/40 py-8">
                             <div class="text-center border-r border-[#C5A367]/20">
                                 <p class="text-[9px] uppercase tracking-[0.2em] text-gray-400 mb-1">Par/SI</p>
@@ -116,9 +153,7 @@
                                 <p id="h-red" class="serif text-xl text-red-500 font-black"></p>
                             </div>
                         </div>
-
                         <p id="h-desc" class="text-white/90 text-xl font-medium mb-10 leading-relaxed border-l-4 border-[#C5A367] pl-6"></p>
-
                         <div class="pt-8 border-t border-[#C5A367]/40">
                             <div class="flex gap-6 items-start">
                                 <span class="text-[#C5A367] serif italic text-6xl leading-none">“</span>
@@ -143,7 +178,6 @@
                     "We invite you to share our course as well as our outstanding facilities. We want to ensure your experience is one to remember for all the right reasons."
                 </p>
             </div>
-
             <div class="grid lg:grid-cols-3 gap-8 mb-16">
                 <div class="lg:col-span-2 bg-[#132419] p-1 border-4 border-[#C5A367] shadow-2xl">
                     <div class="bg-[#132419] p-10">
@@ -179,7 +213,6 @@
                     </ul>
                 </div>
             </div>
-
             <div class="bg-[#132419] text-white p-12 shadow-2xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 p-4 opacity-10 serif text-9xl italic">Style</div>
                 <h3 class="serif text-4xl mb-12 border-b border-[#C5A367]/30 pb-4 inline-block">Dress Code Standards</h3>
@@ -221,7 +254,8 @@
             <div class="grid md:grid-cols-3 gap-8" id="membership-grid"></div>
         </div>
     </section>
-<footer class="bg-[#0b1610] text-white py-20 px-4">
+
+    <footer class="bg-[#0b1610] text-white py-20 px-4">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div class="space-y-8">
                 <div class="flex flex-col">
@@ -243,10 +277,9 @@
                     © <span id="year"></span> Dudley Golf Club. All Rights Reserved.
                 </div>
             </div>
-
             <div class="h-96 w-full bg-white/5 border border-white/10 rounded-sm overflow-hidden grayscale opacity-80 hover:grayscale-0 transition-all duration-700 shadow-2xl">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2430.222378345244!2d-2.072230623321557!3d52.4751068720511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870903332400b97%3A0x6734c5685a494d45!2sDudley%20Golf%20Club!5e0!3m2!1sen!2suk!4v1711000000000!5m2!1sen!2suk" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.673891465223!2d-2.071191!3d52.503169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487090875e7a9b07%3A0x67396655c65d648b!2sDudley%20Golf%20Club!5e0!3m2!1sen!2suk!4v1715424000000!5m2!1sen!2suk" 
                     width="100%" 
                     height="100%" 
                     style="border:0;" 
@@ -332,25 +365,24 @@
                 </div>
             `;
         });
+
         // MOBILE MENU LOGIC
-const menuBtn = document.getElementById('menu-btn');
-const navLinks = document.getElementById('nav-links');
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
 
-menuBtn.addEventListener('click', () => {
-    // This removes the "hidden" state and slides the menu in
-    navLinks.classList.toggle('translate-x-full');
-    navLinks.classList.toggle('translate-x-0');
-});
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('translate-x-full');
+            navLinks.classList.toggle('translate-x-0');
+        });
 
-// Close menu when clicking a link so it doesn't stay open
-document.querySelectorAll('#nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        if(window.innerWidth < 768) {
-            navLinks.classList.add('translate-x-full');
-            navLinks.classList.remove('translate-x-0');
-        }
-    });
-});
+        document.querySelectorAll('#nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if(window.innerWidth < 768) {
+                    navLinks.classList.add('translate-x-full');
+                    navLinks.classList.remove('translate-x-0');
+                }
+            });
+        });
     </script>
 </body>
 </html>
