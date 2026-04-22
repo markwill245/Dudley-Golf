@@ -34,19 +34,26 @@
     </div>
 
     <nav class="sticky top-0 w-full z-50 px-8 py-4 flex justify-between items-center text-white nav-blur border-b border-white/10">
-        <a href="#" class="flex flex-col">
-            <span class="serif text-2xl tracking-widest leading-none">DUDLEY</span>
-            <span class="text-[8px] tracking-[0.4em] uppercase text-[#C5A367]">Golf Club Est. 1893</span>
-        </a>
-        <div class="hidden md:flex gap-10 text-[10px] uppercase tracking-[0.2em] font-semibold">
-            <a href="#" class="hover:text-[#C5A367] transition">Home</a>
-            <a href="#course" class="hover:text-[#C5A367] transition">Course Guide</a>
-            <a href="#visitors" class="hover:text-[#C5A367] transition">Visitors</a>
-            <a href="#membership" class="hover:text-[#C5A367] transition">Membership</a>
-        </div>
-        <a href="https://www.dudleygolfclub.com/login.php" target="_blank" class="border border-[#C5A367] text-[#C5A367] px-5 py-2 text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition">Member Login</a>
-    </nav>
+    <a href="#" class="flex flex-col">
+        <span class="serif text-2xl tracking-widest leading-none">DUDLEY</span>
+        <span class="text-[8px] tracking-[0.4em] uppercase text-[#C5A367]">Golf Club Est. 1893</span>
+    </a>
 
+    <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-50 focus:outline-none">
+        <div class="w-6 h-0.5 bg-[#C5A367]"></div>
+        <div class="w-6 h-0.5 bg-[#C5A367]"></div>
+        <div class="w-6 h-0.5 bg-[#C5A367]"></div>
+    </button>
+
+    <div id="nav-links" class="fixed inset-0 bg-[#132419] flex flex-col items-center justify-center gap-8 text-[12px] uppercase tracking-[0.4em] font-semibold transition-transform duration-300 translate-x-full md:relative md:inset-auto md:bg-transparent md:flex-row md:translate-x-0 md:gap-10 md:text-[10px] md:tracking-[0.2em] z-40">
+        <a href="#" class="hover:text-[#C5A367] transition">Home</a>
+        <a href="#course" class="hover:text-[#C5A367] transition">Course Guide</a>
+        <a href="#visitors" class="hover:text-[#C5A367] transition">Visitors</a>
+        <a href="#membership" class="hover:text-[#C5A367] transition">Membership</a>
+    </div>
+
+    <a href="https://www.dudleygolfclub.com/login.php" target="_blank" class="border border-[#C5A367] text-[#C5A367] px-5 py-2 text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition z-50">Member Login</a>
+</nav>
     <header class="hero-bg h-[70vh] flex items-center justify-center text-center text-white">
         <div class="max-w-4xl px-4">
             <h1 class="text-6xl md:text-9xl font-light mb-6 tracking-tighter">Heritage in every <span class="italic">detail.</span></h1>
