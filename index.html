@@ -34,12 +34,12 @@
     </div>
 
     <nav class="sticky top-0 w-full z-50 px-8 py-4 flex justify-between items-center text-white nav-blur border-b border-white/10">
-    <a href="#" class="flex flex-col">
+    <a href="#" class="flex flex-col relative z-50">
         <span class="serif text-2xl tracking-widest leading-none">DUDLEY</span>
         <span class="text-[8px] tracking-[0.4em] uppercase text-[#C5A367]">Golf Club Est. 1893</span>
     </a>
 
-    <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-50 focus:outline-none">
+    <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-50 focus:outline-none p-2">
         <div class="w-6 h-0.5 bg-[#C5A367]"></div>
         <div class="w-6 h-0.5 bg-[#C5A367]"></div>
         <div class="w-6 h-0.5 bg-[#C5A367]"></div>
@@ -52,7 +52,7 @@
         <a href="#membership" class="hover:text-[#C5A367] transition">Membership</a>
     </div>
 
-    <a href="https://www.dudleygolfclub.com/login.php" target="_blank" class="border border-[#C5A367] text-[#C5A367] px-5 py-2 text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition z-50">Member Login</a>
+    <a href="https://www.dudleygolfclub.com/login.php" target="_blank" class="relative z-50 border border-[#C5A367] text-[#C5A367] px-4 md:px-5 py-2 text-[8px] md:text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition">Member Login</a>
 </nav>
     <header class="hero-bg h-[70vh] flex items-center justify-center text-center text-white">
         <div class="max-w-4xl px-4">
@@ -332,6 +332,25 @@
                 </div>
             `;
         });
+        // MOBILE MENU LOGIC
+const menuBtn = document.getElementById('menu-btn');
+const navLinks = document.getElementById('nav-links');
+
+menuBtn.addEventListener('click', () => {
+    // This removes the "hidden" state and slides the menu in
+    navLinks.classList.toggle('translate-x-full');
+    navLinks.classList.toggle('translate-x-0');
+});
+
+// Close menu when clicking a link so it doesn't stay open
+document.querySelectorAll('#nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        if(window.innerWidth < 768) {
+            navLinks.classList.add('translate-x-full');
+            navLinks.classList.remove('translate-x-0');
+        }
+    });
+});
     </script>
 </body>
 </html>
