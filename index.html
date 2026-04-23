@@ -405,12 +405,21 @@
         // Mobile Menu
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
+        
+        // Toggle menu open/close when clicking the 3 lines
         menuBtn.onclick = () => navLinks.classList.toggle('translate-x-full');
+
+        // This closes the menu automatically when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.onclick = () => navLinks.classList.add('translate-x-full');
+        });
 
         // Start Clock & Load First Hole
         updateClock();
         setInterval(updateClock, 1000);
         setHole(1);
-    </script> 
+    </script>
+</body>
+</html>
 </body>
 </html>
