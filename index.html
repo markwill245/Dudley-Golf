@@ -11,9 +11,9 @@
         body { font-family: 'Outfit', sans-serif; background-color: var(--cream); color: var(--forest); scroll-behavior: smooth; }
         h1, h2, h3, h4, .serif { font-family: 'Cormorant Garamond', serif; }
         .nav-blur { backdrop-filter: blur(12px); background: rgba(19, 36, 25, 0.95); }
-        .hole-card { min-width: 140px; flex-shrink: 0; transition: all 0.3s ease; cursor: pointer; }
+        .hole-card { min-width: 140px; flex-shrink: 0; transition: all 0.3s ease; }
         @media (min-width: 768px) { .hole-card { min-width: 100%; } }
-        .hole-card.active { border-bottom: 4px solid var(--gold); background: white; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        .hole-card.active { border-bottom: 4px solid var(--gold); background: white; }
         @media (min-width: 768px) { .hole-card.active { border-bottom: none; border-left: 4px solid var(--gold); } }
         .custom-scrollbar::-webkit-scrollbar { display: none; }
         .hero-bg { 
@@ -28,7 +28,7 @@
     <div class="bg-[#0b1610] text-white/70 py-2 px-8 flex justify-between items-center text-[10px] tracking-[0.2em] uppercase border-b border-white/5">
         <div id="live-clock">Loading...</div>
         <div class="flex gap-6">
-            <span id="weather-display">Dudley: --°C</span>
+            <span id="weather">Dudley: 14°C</span>
             <span>Course Status: <span class="text-green-400 font-bold uppercase">Open</span></span>
         </div>
     </div>
@@ -38,19 +38,20 @@
             <span class="serif text-2xl tracking-widest leading-none">DUDLEY</span>
             <span class="text-[8px] tracking-[0.4em] uppercase text-[#C5A367]">Golf Club Est. 1893</span>
         </a>
-        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-50 p-2">
+        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-50 p-2 focus:outline-none">
             <div class="w-6 h-0.5 bg-[#C5A367]"></div>
             <div class="w-6 h-0.5 bg-[#C5A367]"></div>
             <div class="w-6 h-0.5 bg-[#C5A367]"></div>
         </button>
         <div id="nav-links" class="fixed inset-0 bg-[#132419] flex flex-col items-center justify-center gap-8 text-[12px] uppercase tracking-[0.4em] font-semibold transition-transform duration-300 translate-x-full md:relative md:inset-auto md:bg-transparent md:flex-row md:translate-x-0 md:gap-10 md:text-[10px] md:tracking-[0.2em] z-40">
             <a href="#" class="hover:text-[#C5A367] transition">Home</a>
-            <a href="#course" class="hover:text-[#C5A367] transition">Course</a>
+            <a href="#course" class="hover:text-[#C5A367] transition">Course Guide</a>
+            <a href="#heritage" class="hover:text-[#C5A367] transition">History</a>
             <a href="#pro-shop" class="hover:text-[#C5A367] transition">Pro Shop</a>
             <a href="#visitors" class="hover:text-[#C5A367] transition">Visitors</a>
             <a href="#membership" class="hover:text-[#C5A367] transition">Membership</a>
         </div>
-        <a href="https://www.dudleygolfclub.com/login.php" class="relative z-50 border border-[#C5A367] text-[#C5A367] px-5 py-2 text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition">Member Login</a>
+        <a href="https://www.dudleygolfclub.com/login.php" target="_blank" class="relative z-50 border border-[#C5A367] text-[#C5A367] px-4 md:px-5 py-2 text-[8px] md:text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition">Member Login</a>
     </nav>
 
     <header class="hero-bg h-[70vh] flex items-center justify-center text-center text-white">
@@ -77,136 +78,169 @@
         </div>
     </section>
 
+    <section id="heritage" class="bg-[#f9f7f2] py-24 px-4 border-t border-gray-200 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -top-10 -left-10 w-64 h-64 bg-[#C5A367]/5 rounded-full blur-3xl"></div>
+                    <div class="relative bg-white p-2 shadow-2xl border border-gray-100 rotate-1">
+                        <img src="heritage-dudley.webp" alt="Old Tom Morris" class="w-full h-auto grayscale hover:grayscale-0 transition duration-700">
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <h2 class="serif text-6xl text-[#132419]">Our Story</h2>
+                    <div class="space-y-6 text-[#132419]/80 serif text-xl italic leading-relaxed">
+                        <p>In 1893, Canon Adam Gray Maitland arrived from Scotland to find a void in the Black Country: the absence of the "Royal and Ancient game."</p>
+                        <p><span class="text-[#132419] font-bold not-italic">Old Tom Morris</span>—architect of Muirfield—personally designed the original course.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-8 border-y border-[#C5A367]/20 py-8">
+                        <div>
+                            <h4 class="text-[10px] uppercase tracking-widest font-bold text-[#C5A367] mb-2">The Ascent</h4>
+                            <p class="text-sm">Built on volcanic rock covered in thousands of years of soft, fine grass.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-[10px] uppercase tracking-widest font-bold text-[#C5A367] mb-2">The Vista</h4>
+                            <p class="text-sm">From the 8th green, look East. Nothing is higher until the Ural Mountains.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pro-shop" class="bg-white py-24 px-4 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-16 items-center">
+                <div class="md:w-1/2 space-y-8">
+                    <h2 class="serif text-6xl text-[#132419]">The Pro Shop</h2>
+                    <p class="serif text-2xl italic text-[#132419]/70 leading-relaxed">"From custom fitting the latest hardware to fine-tuning your swing, our team is here to ensure your game is at its best."</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-[#f9f7f2] p-8 border border-gray-100 shadow-sm">
+                            <h5 class="font-bold text-[11px] uppercase tracking-widest mb-2">Club Repairs</h5>
+                            <p class="text-[11px] text-gray-500 uppercase">Regripping, loft/lie checks, and shaft replacements.</p>
+                        </div>
+                        <div class="bg-[#132419] p-8 text-white shadow-xl">
+                            <h5 class="font-bold text-[11px] uppercase tracking-widest mb-2">Major Brands</h5>
+                            <p class="text-[11px] opacity-70 uppercase">Titleist, Ping, FootJoy & more.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 bg-gray-100 aspect-video rounded shadow-2xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80" alt="Pro Shop Gear" class="w-full h-full object-cover grayscale">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="course" class="max-w-7xl mx-auto px-4 py-20">
         <div class="flex flex-col md:flex-row gap-8">
             <div class="md:w-1/3">
                 <h2 class="serif text-5xl mb-4 text-[#132419]">The 18 Holes</h2>
-                <button onclick="toggleScorecard()" class="mb-8 text-[10px] tracking-[0.2em] font-bold uppercase border border-gray-300 px-4 py-2 hover:bg-gray-100 transition">Full Scorecard</button>
+                <button onclick="toggleScorecard()" class="mb-8 text-[10px] tracking-[0.2em] font-bold uppercase border border-gray-300 px-4 py-2 hover:bg-gray-100 transition">View Full Scorecard</button>
                 <div id="hole-nav-container" class="flex md:flex-col overflow-x-auto md:overflow-y-auto custom-scrollbar gap-2 pb-4 md:h-[600px]"></div>
             </div>
-            <div class="md:w-2/3 bg-[#132419] rounded-sm overflow-hidden shadow-2xl">
+            <div class="md:w-2/3 bg-[#132419] rounded shadow-2xl overflow-hidden">
                 <div class="h-64 md:h-[400px] bg-gray-200">
-                    <img id="h-img" src="" class="w-full h-full object-cover transition-opacity duration-500">
+                    <img id="h-img" src="" class="w-full h-full object-cover transition-opacity duration-500 opacity-100">
                 </div>
                 <div class="p-8 md:p-12">
                     <div class="flex justify-between items-start mb-8 border-b border-white/10 pb-6">
                         <div>
-                            <span id="h-num" class="serif text-6xl text-[#C5A367] italic leading-none"></span>
+                            <span id="h-num" class="serif text-6xl text-[#C5A367] italic"></span>
                             <h3 id="h-name" class="serif text-4xl text-white uppercase mt-2"></h3>
                         </div>
                         <div class="text-right">
-                            <p class="text-[10px] text-gray-400 uppercase tracking-widest">Par / SI</p>
-                            <p id="h-par-si" class="serif text-2xl text-white"></p>
+                            <p id="h-par-si" class="serif text-2xl text-white font-black"></p> 
                         </div>
                     </div>
-                    <div class="grid grid-cols-3 gap-4 mb-10">
-                        <div class="bg-white/5 p-4 text-center">
-                            <p class="text-[10px] text-white uppercase tracking-widest mb-1 font-bold">White</p>
-                            <p id="h-white" class="serif text-xl text-white"></p>
-                        </div>
-                        <div class="bg-white/5 p-4 text-center">
-                            <p class="text-[10px] text-yellow-500 uppercase tracking-widest mb-1 font-bold">Yellow</p>
-                            <p id="h-yellow" class="serif text-xl text-yellow-500"></p>
-                        </div>
-                        <div class="bg-white/5 p-4 text-center">
-                            <p class="text-[10px] text-red-500 uppercase tracking-widest mb-1 font-bold">Red</p>
-                            <p id="h-red" class="serif text-xl text-red-500"></p>
-                        </div>
+                    <div class="grid grid-cols-3 gap-2 mb-10">
+                        <div class="bg-white/5 p-4 text-center"><p class="text-[9px] uppercase tracking-widest text-gray-400 mb-1">White</p><p id="h-white" class="serif text-xl text-white"></p></div>
+                        <div class="bg-white/5 p-4 text-center"><p class="text-[9px] uppercase tracking-widest text-yellow-400 mb-1">Yellow</p><p id="h-yellow" class="serif text-xl text-yellow-400"></p></div>
+                        <div class="bg-white/5 p-4 text-center"><p class="text-[9px] uppercase tracking-widest text-red-500 mb-1">Red</p><p id="h-red" class="serif text-xl text-red-500"></p></div>
                     </div>
-                    <p id="h-desc" class="text-white/80 text-xl serif italic mb-8 leading-relaxed"></p>
+                    <p id="h-desc" class="text-white/90 text-xl serif italic mb-10 leading-relaxed"></p>
                     <div class="bg-[#C5A367]/10 p-6 border-l-2 border-[#C5A367]">
-                        <p class="text-[10px] uppercase tracking-widest text-[#C5A367] mb-2 font-bold">Pro Tip</p>
-                        <p id="h-tip" class="text-white italic leading-relaxed"></p>
+                        <p class="text-[10px] uppercase tracking-widest text-[#C5A367] mb-2 font-bold">Pro Advice</p>
+                        <p id="h-tip" class="text-white italic"></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="pro-shop" class="bg-white py-24 px-4">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div class="order-2 md:order-1">
-                <h2 class="serif text-6xl mb-6">Expertise & Gear</h2>
-                <p class="text-[10px] text-[#C5A367] uppercase tracking-[0.3em] font-bold mb-8">PGA Professional Services</p>
-                <div class="space-y-6 text-gray-600 leading-relaxed">
-                    <p>Our Pro Shop is more than a retail space—it's a hub for performance. Led by our resident PGA Professionals, we offer cutting-edge video analysis, launch monitor technology, and expert club fitting.</p>
-                    <ul class="space-y-4 serif text-xl italic text-[#132419]">
-                        <li>• Authorised Titleist & Ping Fitting Centre</li>
-                        <li>• Electric Buggy & Trolley Hire</li>
-                        <li>• Full Workshop for Regripping & Repairs</li>
+    <section id="visitors" class="bg-[#f9f7f2] py-24 px-4 border-y border-gray-200">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="serif text-6xl md:text-8xl text-[#132419] mb-8 leading-none">Experience Dudley</h2>
+                <p class="serif text-2xl italic text-[#132419]/80 max-w-4xl mx-auto leading-relaxed">
+                    "We invite you to share our course as well as our outstanding facilities. We want to ensure your experience is one to remember."
+                </p>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                <div class="lg:col-span-2 bg-[#132419] p-1 border-4 border-[#C5A367] shadow-2xl">
+                    <div class="bg-[#132419] p-10">
+                        <h3 class="serif text-4xl text-[#C5A367] mb-10 uppercase tracking-widest text-center">Green Fees — 2026</h3>
+                        <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
+                            <div class="border-b border-[#C5A367]/30 pb-4 flex justify-between items-end text-white">
+                                <span class="text-sm">Visitors (Mon-Fri)</span><span class="serif text-3xl text-[#C5A367]">£25.00</span>
+                            </div>
+                            <div class="border-b border-[#C5A367]/30 pb-4 flex justify-between items-end text-white">
+                                <span class="text-sm">Visitors (Sat-Sun)</span><span class="serif text-3xl text-[#C5A367]">£32.00</span>
+                            </div>
+                            <div class="border-b border-[#C5A367]/30 pb-4 flex justify-between items-end text-white">
+                                <span class="text-sm">Member Guest (Mon-Fri)</span><span class="serif text-3xl text-[#C5A367]">£20.00</span>
+                            </div>
+                            <div class="border-b border-[#C5A367]/30 pb-4 flex justify-between items-end text-white">
+                                <span class="text-sm">Member Guest (Sat-Sun)</span><span class="serif text-3xl text-[#C5A367]">£25.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-10 border border-gray-100 flex flex-col justify-center shadow-lg">
+                    <h4 class="serif text-3xl text-[#132419] mb-6 font-bold italic">Arrival Info</h4>
+                    <ul class="space-y-4 text-xs tracking-wide leading-loose text-[#132419]/80 uppercase">
+                        <li><span class="text-[#C5A367] font-black mr-2">/</span> Report to Pro Shop</li>
+                        <li><span class="text-[#C5A367] font-black mr-2">/</span> 8:00AM Summer Opening</li>
+                        <li><span class="text-[#C5A367] font-black mr-2">/</span> Check Local Rules</li>
+                        <li><span class="text-[#C5A367] font-black mr-2">/</span> 1st & 10th Tee Starts</li>
                     </ul>
-                    <a href="tel:01384233555" class="inline-block mt-8 bg-[#132419] text-white px-8 py-4 text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] transition">Book a Lesson</a>
                 </div>
-            </div>
-            <div class="order-1 md:order-2 bg-gray-100 aspect-square overflow-hidden shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80" alt="Pro Shop" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-1000">
             </div>
         </div>
     </section>
 
-    <section id="visitors" class="py-24 bg-[#132419] text-white px-4">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="serif text-5xl mb-16 italic">2026 Visitor Enquiries</h2>
-            <div class="grid md:grid-cols-2 gap-px bg-white/10 border border-white/10">
-                <div class="p-12 hover:bg-white/5 transition">
-                    <h3 class="serif text-3xl mb-4">Weekday Green Fee</h3>
-                    <p class="text-6xl text-[#C5A367] font-light mb-2">£25.00</p>
-                    <p class="text-[10px] uppercase tracking-widest opacity-60">Monday — Friday</p>
-                </div>
-                <div class="p-12 hover:bg-white/5 transition">
-                    <h3 class="serif text-3xl mb-4">Weekend Green Fee</h3>
-                    <p class="text-6xl text-[#C5A367] font-light mb-2">£32.00</p>
-                    <p class="text-[10px] uppercase tracking-widest opacity-60">Saturday — Sunday</p>
-                </div>
-            </div>
-            <a href="tel:01384233555" class="mt-16 inline-block border border-[#C5A367] text-[#C5A367] px-12 py-5 text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-[#C5A367] hover:text-[#132419] transition">Book Your Tee Time</a>
-        </div>
-    </section>
-
-    <section id="membership" class="py-24 px-4 bg-[#f9f7f2]">
+    <section id="membership" class="bg-[#132419] text-white py-24 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="serif text-6xl text-[#132419]">Join the Legacy</h2>
-                <div class="w-24 h-1 bg-[#C5A367] mx-auto mt-6"></div>
+                <h2 class="serif text-6xl mb-4 text-[#C5A367]">Membership</h2>
+                <p class="text-[10px] tracking-[0.3em] uppercase opacity-50 italic">Join our community of golfers</p>
             </div>
-            <div id="membership-grid" class="grid md:grid-cols-3 gap-8"></div>
+            <div class="grid md:grid-cols-3 gap-8" id="membership-grid"></div>
         </div>
     </section>
 
-    <footer class="bg-[#0b1610] text-white/80 py-20 border-t border-white/5 px-4">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-16">
-            <div class="space-y-8">
-                <h4 class="serif text-3xl text-white italic underline decoration-[#C5A367]">Find Us</h4>
-                <p class="text-sm leading-relaxed serif italic text-xl">Dudley Golf Club,<br>Turners Hill, Oakham,<br>Dudley, West Midlands DY2 8TX</p>
-                <p class="text-[10px] uppercase tracking-widest font-bold">T: 01384 233 555</p>
+    <footer class="bg-[#0b1610] text-white py-20 px-4">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-4 text-sm opacity-70 serif italic text-xl">
+                <p class="font-bold text-white not-italic uppercase text-[10px] tracking-widest">Our Location</p>
+                <p>Turners Hill, Oakham, Dudley, DY2 7JL</p>
+                <p>Pro Shop: 01384 254020</p>
             </div>
-            <div class="md:col-span-2 h-80 grayscale opacity-50 hover:opacity-100 hover:grayscale-0 transition duration-700">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.188339247169!2d-2.0628224!3d52.5119108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487090f77977a421%3A0xc31481b6716f9f38!2sDudley%20Golf%20Club!5e0!3m2!1sen!2suk!4v1715423000000!5m2!1sen!2suk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="h-80 grayscale opacity-60 hover:grayscale-0 transition duration-700 shadow-2xl overflow-hidden">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.608779691656!2d-2.0722130229864215!3d52.5042858720573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487090886699276d%3A0xc34062141503c314!2sDudley%20Golf%20Club!5e0!3m2!1sen!2suk!4v1715871234567!5m2!1sen!2suk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-        </div>
-        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 text-[8px] uppercase tracking-[0.4em] flex justify-between">
-            <span>&copy; <span id="year"></span> Dudley Golf Club</span>
-            <span class="text-[#C5A367]">Est. 1893</span>
         </div>
     </footer>
 
     <div id="scorecard-modal" class="fixed inset-0 bg-black/90 z-[100] hidden items-center justify-center p-4">
-        <div class="bg-[#F9F7F2] p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="bg-[#F9F7F2] p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded shadow-2xl">
             <div class="flex justify-between items-center mb-6 border-b border-gray-200 pb-4">
-                <h3 class="serif text-3xl italic">Course Scorecard</h3>
-                <button onclick="toggleScorecard()" class="text-4xl text-gray-400 hover:text-black">&times;</button>
+                <h3 class="serif text-3xl italic">Official Course Scorecard</h3>
+                <button onclick="toggleScorecard()" class="text-4xl text-gray-400 hover:text-black">×</button>
             </div>
             <table class="w-full text-center border-collapse">
-                <thead class="bg-[#132419] text-white text-[10px] uppercase tracking-widest">
-                    <tr>
-                        <th class="p-3">Hole</th>
-                        <th class="p-3">Name</th>
-                        <th class="p-3">White</th>
-                        <th class="p-3">Yellow</th>
-                        <th class="p-3">Red</th>
-                        <th class="p-3">Par</th>
-                        <th class="p-3">SI</th>
-                    </tr>
+                <thead class="bg-[#132419] text-white text-[10px] uppercase tracking-widest font-bold">
+                    <tr><th class="p-3">Hole</th><th class="p-3">Name</th><th class="p-3">White</th><th class="p-3">Yellow</th><th class="p-3">Red</th><th class="p-3">Par</th><th class="p-3">SI</th></tr>
                 </thead>
                 <tbody id="scorecard-body" class="text-sm"></tbody>
             </table>
@@ -236,41 +270,29 @@
         };
 
         const membershipData = [
-            { name: "Full Member", price: "£1,150", desc: "Unlimited access to the course, full competition rights, and club voting privileges." },
-            { name: "7 Day Restricted", price: "£860", desc: "Full access to the course and facilities with specific competition restrictions." },
-            { name: "Junior Member", price: "£50", desc: "For future champions under 18. Includes tuition discounts and full course access." }
+            { name: "Full Member", price: "£1,150", desc: "Unlimited golf 7 days a week, full competition entry and club voting rights." },
+            { name: "7 Day Restricted", price: "£860", desc: "For those with a busy lifestyle wanting weekend and weekday play." },
+            { name: "Junior Member", price: "£50", desc: "Under 18s. Supporting the future generations of the game." }
         ];
 
         function updateUI() {
             const now = new Date();
-            document.getElementById('live-clock').innerText = now.toLocaleString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
-            document.getElementById('year').innerText = now.getFullYear();
-            const temp = Math.floor(Math.random() * (18 - 12 + 1)) + 12;
-            document.getElementById('weather-display').innerText = `Dudley: ${temp}°C`;
+            document.getElementById('live-clock').innerText = now.toLocaleString('en-GB', { weekday: 'short', hour: '2-digit', minute: '2-digit' });
         }
 
         function setHole(n) {
             const h = courseData[n];
-            const img = document.getElementById('h-img');
-            img.style.opacity = '0';
-            setTimeout(() => {
-                document.getElementById('h-num').innerText = n.toString().padStart(2, '0');
-                document.getElementById('h-name').innerText = h.name;
-                document.getElementById('h-par-si').innerText = `P${h.par} / S${h.si}`;
-                document.getElementById('h-white').innerText = h.w;
-                document.getElementById('h-yellow').innerText = h.y;
-                document.getElementById('h-red').innerText = h.r;
-                document.getElementById('h-desc').innerText = h.desc;
-                document.getElementById('h-tip').innerText = h.tip;
-                img.src = h.img;
-                img.style.opacity = '1';
-            }, 300);
+            document.getElementById('h-num').innerText = n.toString().padStart(2, '0');
+            document.getElementById('h-name').innerText = h.name;
+            document.getElementById('h-par-si').innerText = `P${h.par} / S${h.si}`;
+            document.getElementById('h-white').innerText = h.w;
+            document.getElementById('h-yellow').innerText = h.y;
+            document.getElementById('h-red').innerText = h.r;
+            document.getElementById('h-desc').innerText = h.desc;
+            document.getElementById('h-tip').innerText = h.tip;
+            document.getElementById('h-img').src = h.img;
             document.querySelectorAll('.hole-card').forEach(c => c.classList.remove('active'));
-            const card = document.getElementById(`h-${n}`);
-            if (card) {
-                card.classList.add('active');
-                card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-            }
+            document.getElementById(`h-${n}`).classList.add('active');
         }
 
         function toggleScorecard() {
@@ -281,31 +303,28 @@
             if (body.innerHTML === "") {
                 Object.keys(courseData).forEach(i => {
                     const h = courseData[i];
-                    body.innerHTML += `<tr class="border-b border-gray-200 hover:bg-white transition"><td class="p-3 font-bold bg-gray-50">${i}</td><td class="p-3 serif italic text-left">${h.name}</td><td class="p-3 font-semibold">${h.w}</td><td class="p-3 text-yellow-600 font-semibold">${h.y}</td><td class="p-3 text-red-600 font-semibold">${h.r}</td><td class="p-3">${h.par}</td><td class="p-3">${h.si}</td></tr>`;
+                    body.innerHTML += `<tr class="border-b border-gray-100 hover:bg-white transition"><td class="p-3 font-bold bg-gray-50">${i}</td><td class="p-3 serif italic text-left">${h.name}</td><td class="p-3">${h.w}</td><td class="p-3 text-yellow-600 font-bold">${h.y}</td><td class="p-3 text-red-600 font-bold">${h.r}</td><td class="p-3">${h.par}</td><td class="p-3 font-black">${h.si}</td></tr>`;
                 });
             }
         }
 
-        // Init Components
         const navCont = document.getElementById('hole-nav-container');
         for (let i = 1; i <= 18; i++) {
             const div = document.createElement('div');
             div.id = `h-${i}`;
-            div.className = "hole-card p-4 border border-gray-200/50";
-            div.innerHTML = `<p class="text-[10px] uppercase font-bold tracking-widest">Hole ${i}</p><p class="serif italic text-gray-500 text-xs">${courseData[i].name}</p>`;
+            div.className = "hole-card p-4 border border-gray-200/50 cursor-pointer transition-all";
+            div.innerHTML = `<p class="text-[10px] uppercase font-bold tracking-widest">Hole ${i}</p><p class="serif italic text-gray-400 text-xs">${courseData[i].name}</p>`;
             div.onclick = () => setHole(i);
             navCont.appendChild(div);
         }
 
         const mGrid = document.getElementById('membership-grid');
         membershipData.forEach(m => {
-            mGrid.innerHTML += `<div class="p-10 border border-[#132419]/5 bg-white shadow-xl flex flex-col justify-between items-center text-center"><h4 class="serif text-3xl mb-4 italic">${m.name}</h4><p class="text-4xl font-light text-[#C5A367] mb-6">${m.price}</p><p class="text-sm text-gray-500 leading-relaxed mb-8 italic">${m.desc}</p><a href="tel:01384233555" class="text-[10px] uppercase tracking-[0.3em] border-b border-[#C5A367] pb-1 font-bold">Apply Now</a></div>`;
+            mGrid.innerHTML += `<div class="p-10 border border-white/10 bg-white/5 shadow-2xl flex flex-col items-center text-center"><h4 class="serif text-3xl mb-4 italic text-[#C5A367] font-bold">${m.name}</h4><p class="text-4xl font-light mb-6 font-bold">${m.price}</p><p class="text-sm text-gray-400 leading-relaxed mb-8 italic">${m.desc}</p><a href="tel:01384254020" class="text-[10px] uppercase tracking-widest border border-[#C5A367] px-6 py-2 hover:bg-[#C5A367] transition">Inquire</a></div>`;
         });
 
-        setInterval(updateUI, 1000);
-        updateUI();
-        setHole(1);
-
+        setInterval(updateUI, 1000); updateUI(); setHole(1);
+        
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
         menuBtn.onclick = () => navLinks.classList.toggle('translate-x-full');
