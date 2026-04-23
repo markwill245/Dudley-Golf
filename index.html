@@ -40,18 +40,18 @@
         </a>
 
         <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-50 focus:outline-none p-2">
-            <div class="w-6 h-0.5 bg-[#C5A367]"></div>
-            <div class="w-6 h-0.5 bg-[#C5A367]"></div>
-            <div class="w-6 h-0.5 bg-[#C5A367]"></div>
+            <div class="w-6 h-0.5 bg-[#C5A367] transition-all duration-300 origin-center"></div>
+            <div class="w-6 h-0.5 bg-[#C5A367] transition-all duration-300"></div>
+            <div class="w-6 h-0.5 bg-[#C5A367] transition-all duration-300 origin-center"></div>
         </button>
 
-        <div id="nav-links" class="fixed inset-0 bg-[#132419] flex flex-col items-center justify-center gap-8 text-[12px] uppercase tracking-[0.4em] font-semibold transition-transform duration-300 translate-x-full md:relative md:inset-auto md:bg-transparent md:flex-row md:translate-x-0 md:gap-10 md:text-[10px] md:tracking-[0.2em] z-40">
-            <a href="#" class="hover:text-[#C5A367] transition">Home</a>
-            <a href="#course" class="hover:text-[#C5A367] transition">Course Guide</a>
-            <a href="#heritage" class="hover:text-[#C5A367] transition">History</a>
-            <a href="#pro-shop" class="hover:text-[#C5A367] transition">Pro Shop</a>
-            <a href="#visitors" class="hover:text-[#C5A367] transition">Visitors</a>
-            <a href="#membership" class="hover:text-[#C5A367] transition">Membership</a>
+        <div id="nav-links" class="fixed inset-0 bg-[#228B22] flex flex-col items-center justify-center gap-8 text-[12px] uppercase tracking-[0.4em] font-semibold transition-transform duration-500 translate-x-full md:relative md:inset-auto md:bg-transparent md:flex-row md:translate-x-0 md:gap-10 md:text-[10px] md:tracking-[0.2em] z-40">
+            <a href="#" class="nav-item text-[#C5A367] md:text-white hover:text-white md:hover:text-[#C5A367] transition">Home</a>
+            <a href="#course" class="nav-item text-[#C5A367] md:text-white hover:text-white md:hover:text-[#C5A367] transition">Course Guide</a>
+            <a href="#heritage" class="nav-item text-[#C5A367] md:text-white hover:text-white md:hover:text-[#C5A367] transition">History</a>
+            <a href="#pro-shop" class="nav-item text-[#C5A367] md:text-white hover:text-white md:hover:text-[#C5A367] transition">Pro Shop</a>
+            <a href="#visitors" class="nav-item text-[#C5A367] md:text-white hover:text-white md:hover:text-[#C5A367] transition">Visitors</a>
+            <a href="#membership" class="nav-item text-[#C5A367] md:text-white hover:text-white md:hover:text-[#C5A367] transition">Membership</a>
         </div>
 
         <a href="https://www.dudleygolfclub.com/login.php" target="_blank" class="relative z-50 border border-[#C5A367] text-[#C5A367] px-4 md:px-5 py-2 text-[8px] md:text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition">Member Login</a>
@@ -414,19 +414,31 @@
             `;
         });
 
+        // REFINED MENU LOGIC
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
+        const lines = menuBtn.querySelectorAll('div');
 
-        menuBtn.addEventListener('click', () => {
+        function toggleMenu() {
+            // Toggle Menu Overlay
             navLinks.classList.toggle('translate-x-full');
             navLinks.classList.toggle('translate-x-0');
-        });
 
-        document.querySelectorAll('#nav-links a').forEach(link => {
+            // Animate Hamburger to X
+            lines[0].classList.toggle('rotate-45');
+            lines[0].classList.toggle('translate-y-2');
+            lines[1].classList.toggle('opacity-0');
+            lines[2].classList.toggle('-rotate-45');
+            lines[2].classList.toggle('-translate-y-2');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-item').forEach(link => {
             link.addEventListener('click', () => {
                 if(window.innerWidth < 768) {
-                    navLinks.classList.add('translate-x-full');
-                    navLinks.classList.remove('translate-x-0');
+                    toggleMenu();
                 }
             });
         });
