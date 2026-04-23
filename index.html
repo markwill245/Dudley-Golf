@@ -317,30 +317,15 @@
                     <p>Pro Shop: 01384 254020<br>Office: 01384 253020</p>
                     <p>professional@dudleygolfclub.com</p>
                 </div>
-                <div class="flex gap-4">
-                    <a href="mailto:professional@dudleygolfclub.com" class="bg-[#C5A367] text-white px-6 py-3 text-[10px] uppercase tracking-widest font-bold hover:bg-white hover:text-[#132419] transition-all">
-                        Request a Brochure
-                    </a>
-                </div>
                 <div class="pt-8 border-t border-white/10 text-[9px] uppercase tracking-[0.3em] opacity-40">
                     © <span id="year"></span> Dudley Golf Club. All Rights Reserved.
                 </div>
-            </div>
-            <div class="h-96 w-full bg-white/5 border border-white/10 rounded-sm overflow-hidden grayscale opacity-80 hover:grayscale-0 transition-all duration-700 shadow-2xl">
-                <iframe 
-                    src="http://googleusercontent.com/maps.google.com/3" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
             </div>
         </div>
     </footer>
     
     <script>
+        // --- YOUR ORIGINAL DATA ---
         const courseData = {
             1: { name: "The Dog-Leg", img: "images/hole1.webp", w: 483, y: 473, r: 464, par: 5, si: 9, tip: "A straight tee shot is required to a long left sweeping fairway.", desc: "A challenging start to the round requiring precision from the tee." },
             2: { name: "Risk & Reward", img: "images/hole2.webp", w: 257, y: 251, r: 167, par: "4/3", si: "17/11", tip: "A steady tee shot followed by an accurate pitch to a narrow raised green.", desc: "Test your nerve on this tactical short hole." },
@@ -368,6 +353,7 @@
             { name: "Junior Member", price: "£50", desc: "Under 18s. Supporting the future." }
         ];
 
+        // --- YOUR ORIGINAL FUNCTIONS ---
         function updateClock() {
             const now = new Date();
             const clockEl = document.getElementById('live-clock');
@@ -417,7 +403,7 @@
             `;
         });
 
-        // Toggle Script
+        // --- THE ADDED TOGGLE LOGIC (FIXED) ---
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
 
