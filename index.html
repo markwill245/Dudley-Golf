@@ -47,11 +47,27 @@
             <a href="#" class="hover:text-[#C5A367] transition">Home</a>
             <a href="#course" class="hover:text-[#C5A367] transition">Course Guide</a>
             <a href="#heritage" class="hover:text-[#C5A367] transition">History</a>
+            
+            <div class="relative group">
+                <button class="hover:text-[#C5A367] transition flex items-center gap-1 uppercase tracking-[0.2em]">
+                    Hospitality 
+                    <svg class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="absolute left-0 mt-2 w-56 bg-[#132419] border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl py-2">
+                    <a href="clubhouse.html" class="block px-6 py-4 hover:bg-[#C5A367] hover:text-white transition text-[9px] tracking-widest border-b border-white/5 uppercase">Our Clubhouse</a>
+                    <a href="functions.html" class="block px-6 py-4 hover:bg-[#C5A367] hover:text-white transition text-[9px] tracking-widest uppercase">Function Room Hire</a>
+                </div>
+            </div>
+
             <a href="#pro-shop" class="hover:text-[#C5A367] transition">Pro Shop</a>
             <a href="#visitors" class="hover:text-[#C5A367] transition">Visitors</a>
             <a href="#membership" class="hover:text-[#C5A367] transition">Membership</a>
         </div>
-        <a href="https://www.dudleygolfclub.com/login.php" target="_blank" class="relative z-50 border border-[#C5A367] text-[#C5A367] px-4 md:px-5 py-2 text-[8px] md:text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition">Member Login</a>
+        
+        <div class="flex gap-2">
+            <a href="https://www.dudleygolfclub.com/visitor_booking.php" target="_blank" class="hidden lg:block border border-white/20 text-white px-4 py-2 text-[10px] uppercase tracking-widest font-bold hover:bg-white hover:text-[#132419] transition">Book a Tee</a>
+            <a href="https://www.dudleygolfclub.com/login.php" target="_blank" class="relative z-50 border border-[#C5A367] text-[#C5A367] px-4 md:px-5 py-2 text-[8px] md:text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition">Member Login</a>
+        </div>
     </nav>
 
     <header class="hero-bg h-[70vh] flex items-center justify-center text-center text-white">
@@ -114,8 +130,7 @@
                 <div class="lg:w-1/2 relative">
                     <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-[#C5A367] z-0"></div>
                     <div class="relative z-10 bg-[#132419] p-2 shadow-2xl">
-                        
-                        <img src="pro-shop-hero.webp.webp" alt="PGA Professional" class="w-full h-[500px] object-cover grayscale hover:grayscale-0 transition duration-700">
+                        <img src="pro-shop-hero.webp" alt="PGA Professional" class="w-full h-[500px] object-cover grayscale hover:grayscale-0 transition duration-700">
                     </div>
                 </div>
 
@@ -219,8 +234,8 @@
                         </div>
                         
                         <div class="mt-12 text-center">
-                            <a href="tel:01384254020" class="inline-block bg-[#C5A367] text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.3em] hover:bg-white hover:text-[#132419] transition-all">
-                                Book a Tee Time: 01384 254020
+                            <a href="https://www.dudleygolfclub.com/visitor_booking.php" target="_blank" class="inline-block bg-[#C5A367] text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.3em] hover:bg-white hover:text-[#132419] transition-all">
+                                Book a Tee Time Online
                             </a>
                         </div>
                     </div>
@@ -263,8 +278,6 @@
                     <p>professional@dudleygolfclub.com</p>
                 </div>
 
-                
-
                 <div class="pt-8 border-t border-white/10 text-[9px] uppercase tracking-[0.3em] opacity-40">
                     © <span id="year"></span> Dudley Golf Club. All Rights Reserved.
                 </div>
@@ -272,7 +285,7 @@
 
             <div class="h-96 w-full bg-white/5 border border-white/10 rounded-sm overflow-hidden grayscale opacity-80 hover:grayscale-0 transition-all duration-700 shadow-2xl">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.188289454848!2d-2.083756823321528!3d52.5119114720613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48709087c2b03657%3A0xc39281a8b60b296f!2sDudley%20Golf%20Club!5e0!3m2!1sen!2suk!4v1715000000000!5m2!1sen!2suk" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2430.407267156939!2d-2.072551623516567!3d52.4717145720493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870908866e4a2c9%3A0xc3f837339d67562f!2sDudley%20Golf%20Club!5e0!3m2!1sen!2suk!4v1715876543210!5m2!1sen!2suk" 
                     width="100%" 
                     height="100%" 
                     style="border:0;" 
