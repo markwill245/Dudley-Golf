@@ -305,7 +305,7 @@
             { name: "Junior Member", price: "£50", desc: "Under 18s. Supporting the future generations of the game." }
         ];
 
-        function updateClock() {
+       function updateClock() {
             const now = new Date();
             document.getElementById('live-clock').innerText = now.toLocaleString('en-GB', { 
                 weekday: 'short', 
@@ -317,6 +317,12 @@
             });
             document.getElementById('year').innerText = now.getFullYear();
         }
+
+        // Run it once immediately so it doesn't say "Loading"
+        updateClock(); 
+        
+        // Run it every 1 second so the clock actually ticks
+        setInterval(updateClock, 1000);
 
         function setHole(n) {
             const h = courseData[n];
