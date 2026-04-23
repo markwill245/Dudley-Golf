@@ -277,7 +277,7 @@
         </div>
     </div>
 
-    <script>
+  <script>
         const courseData = {
             1: { name: "The Dog-Leg", img: "images/hole1.webp", w: 483, y: 473, r: 464, par: 5, si: 9, tip: "A straight tee shot is required to a long left sweeping fairway.", desc: "A challenging start to the round requiring precision from the tee." },
             2: { name: "Risk & Reward", img: "images/hole2.webp", w: 257, y: 251, r: 167, par: "4/3", si: "17/11", tip: "A steady tee shot followed by an accurate pitch to a narrow raised green.", desc: "Test your nerve on this tactical short hole." },
@@ -305,25 +305,22 @@
             { name: "Junior Member", price: "£50", desc: "Under 18s. Supporting the future generations of the game." }
         ];
 
-       function updateClock() {
+        // CLOCK LOGIC
+        function updateClock() {
             const now = new Date();
-            document.getElementById('live-clock').innerText = now.toLocaleString('en-GB', { 
-                weekday: 'short', 
-                day: 'numeric', 
-                month: 'short', 
-                hour: '2-digit', 
-                minute: '2-digit',
-                second: '2-digit'
-            });
-            document.getElementById('year').innerText = now.getFullYear();
+            const clockEl = document.getElementById('live-clock');
+            const yearEl = document.getElementById('year');
+            
+            if(clockEl) {
+                clockEl.innerText = now.toLocaleString('en-GB', { 
+                    weekday: 'short', day: 'numeric', month: 'short', 
+                    hour: '2-digit', minute: '2-digit', second: '2-digit' 
+                });
+            }
+            if(yearEl) yearEl.innerText = now.getFullYear();
         }
 
-        // Run it once immediately so it doesn't say "Loading"
-        updateClock(); 
-        
-        // Run it every 1 second so the clock actually ticks
-        setInterval(updateClock, 1000);
-
+        // COURSE GUIDE LOGIC
         function setHole(n) {
             const h = courseData[n];
             document.getElementById('h-num').innerText = n.toString().padStart(2, '0');
@@ -352,6 +349,7 @@
             }
         }
 
+        // INITIALIZE PAGE
         const navCont = document.getElementById('hole-nav-container');
         for (let i = 1; i <= 18; i++) {
             const div = document.createElement('div');
@@ -367,11 +365,15 @@
             mGrid.innerHTML += `<div class="p-10 border border-white/10 bg-white/5 shadow-2xl flex flex-col items-center text-center"><h4 class="serif text-3xl mb-4 italic text-[#C5A367] font-bold">${m.name}</h4><p class="text-4xl font-light mb-6 font-bold">${m.price}</p><p class="text-sm text-gray-400 leading-relaxed mb-8 italic">${m.desc}</p><a href="tel:01384254020" class="text-[10px] uppercase tracking-widest border border-[#C5A367] px-6 py-2 hover:bg-[#C5A367] transition">Inquire</a></div>`;
         });
 
-        setInterval(updateUI, 1000); updateUI(); setHole(1);
-        
+        // Mobile Menu
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
         menuBtn.onclick = () => navLinks.classList.toggle('translate-x-full');
-    </script>
+
+        // Start Clock & Load First Hole
+        updateClock();
+        setInterval(updateClock, 1000);
+        setHole(1);
+    </script> 
 </body>
 </html>
