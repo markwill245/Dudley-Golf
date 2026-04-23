@@ -305,9 +305,17 @@
             { name: "Junior Member", price: "£50", desc: "Under 18s. Supporting the future generations of the game." }
         ];
 
-        function updateUI() {
+        function updateClock() {
             const now = new Date();
-            document.getElementById('live-clock').innerText = now.toLocaleString('en-GB', { weekday: 'short', hour: '2-digit', minute: '2-digit' });
+            document.getElementById('live-clock').innerText = now.toLocaleString('en-GB', { 
+                weekday: 'short', 
+                day: 'numeric', 
+                month: 'short', 
+                hour: '2-digit', 
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById('year').innerText = now.getFullYear();
         }
 
         function setHole(n) {
