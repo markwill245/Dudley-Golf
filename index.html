@@ -22,7 +22,6 @@
         }
         :target { scroll-margin-top: 100px; }
 
-        /* Dropdown Styling & The "Bridge" Fix */
         .dropdown-content { 
             opacity: 0; 
             visibility: hidden; 
@@ -34,7 +33,6 @@
             visibility: visible; 
             transform: translateY(0); 
         }
-        /* This invisible pseudo-element fills the gap so the menu stays open while moving the mouse down */
         .dropdown-content::before {
             content: '';
             position: absolute;
@@ -236,7 +234,7 @@
                 <h2 class="serif text-6xl md:text-8xl text-[#132419] mb-8 leading-none">Experience Dudley</h2>
                 <div class="w-32 h-1 bg-[#C5A367] mx-auto mb-8"></div>
                 <p class="serif text-2xl italic text-[#132419]/80 max-w-4xl mx-auto leading-relaxed px-4">
-                    "We invite you to share our course as well as our outstanding facilities."
+                    "We invite you to share our course as well as our outstanding facilities. We want to ensure your experience is one to remember for all the right reasons."
                 </p>
             </div>
             <div class="grid lg:grid-cols-3 gap-8 mb-16">
@@ -250,10 +248,16 @@
                             <div class="border-b border-[#C5A367]/30 pb-4 flex justify-between items-end text-white">
                                 <span class="text-sm">Visitors (Sat-Sun)</span><span class="serif text-3xl text-[#C5A367]">£32.00</span>
                             </div>
+                            <div class="border-b border-[#C5A367]/30 pb-4 flex justify-between items-end text-white">
+                                <span class="text-sm">Member Guest (Mon-Fri)</span><span class="serif text-3xl text-[#C5A367]">£20.00</span>
+                            </div>
+                            <div class="border-b border-[#C5A367]/30 pb-4 flex justify-between items-end text-white">
+                                <span class="text-sm">Member Guest (Sat-Sun)</span><span class="serif text-3xl text-[#C5A367]">£25.00</span>
+                            </div>
                         </div>
                         <div class="mt-12 text-center">
                             <a href="tel:01384254020" class="inline-block bg-[#C5A367] text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.3em] hover:bg-white hover:text-[#132419] transition-all">
-                                Book: 01384 254020
+                                Book a Tee Time: 01384 254020
                             </a>
                         </div>
                     </div>
@@ -261,8 +265,10 @@
                 <div class="bg-white p-10 border border-gray-100 flex flex-col justify-center shadow-lg">
                     <h4 class="serif text-3xl text-[#132419] mb-6">Arrival Info</h4>
                     <ul class="space-y-4 text-xs tracking-wide uppercase opacity-70">
-                        <li><span class="text-[#C5A367] font-black">/</span> Report to Pro Shop</li>
-                        <li><span class="text-[#C5A367] font-black">/</span> Check Local Rules</li>
+                        <li><span class="text-[#C5A367] font-black mr-2">/</span> Report to Pro Shop</li>
+                        <li><span class="text-[#C5A367] font-black mr-2">/</span> 8:00AM Summer Opening</li>
+                        <li><span class="text-[#C5A367] font-black mr-2">/</span> Check Local Rules</li>
+                        <li><span class="text-[#C5A367] font-black mr-2">/</span> 1st & 10th Tee Starts</li>
                     </ul>
                 </div>
             </div>
@@ -279,14 +285,24 @@
     </section>
 
     <footer class="bg-[#0b1610] text-white py-20 px-4">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <span class="serif text-4xl tracking-widest">DUDLEY</span>
-                <p class="mt-4 opacity-50">Turners Hill, Oakham, Dudley, DY2 7JL</p>
-                <p class="mt-8 text-[9px] uppercase tracking-widest opacity-30">© <span id="year"></span> Dudley Golf Club</p>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+            <div class="space-y-8">
+                <div class="flex flex-col">
+                    <span class="serif text-4xl tracking-widest leading-none">DUDLEY</span>
+                    <span class="text-[10px] tracking-[0.4em] uppercase text-[#C5A367]">Golf Club Est. 1893</span>
+                </div>
+                <div class="space-y-4 text-sm opacity-70 leading-relaxed">
+                    <p class="font-bold text-white opacity-100 uppercase text-[10px] tracking-widest">Our Location</p>
+                    <p>Turners Hill, Oakham,<br>Dudley, West Midlands, DY2 7JL</p>
+                    <p>Pro Shop: 01384 254020<br>Office: 01384 253020</p>
+                    <p>professional@dudleygolfclub.com</p>
+                </div>
+                <div class="pt-8 border-t border-white/10 text-[9px] uppercase tracking-[0.3em] opacity-40">
+                    © <span id="year"></span> Dudley Golf Club. All Rights Reserved.
+                </div>
             </div>
-            <div class="h-64 bg-white/5 border border-white/10 rounded overflow-hidden">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2427.670570392348!2d-2.0833333233156096!3d52.511111072059374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487090f779774577%3A0xc3995163f905085e!2sDudley%20Golf%20Club!5e0!3m2!1sen!2suk!4v1715854445678!5m2!1sen!2suk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="h-80 w-full bg-white/5 border border-white/10 rounded-sm overflow-hidden grayscale opacity-80 hover:grayscale-0 transition-all duration-700 shadow-2xl">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2430.2974914109315!2d-2.066497722754668!3d52.49186633857143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870900000000001%3A0x67394d6c49887754!2sDudley%20Golf%20Club!5e0!3m2!1sen!2suk!4v1715000000000!5m2!1sen!2suk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </footer>
@@ -308,24 +324,24 @@
 
     <script>
         const courseData = {
-            1: { name: "The Dog-Leg", img: "images/hole1.webp", w: 483, y: 473, r: 464, par: 5, si: 9, tip: "A straight tee shot is required.", desc: "A challenging start." },
-            2: { name: "Risk & Reward", img: "images/hole2.webp", w: 257, y: 251, r: 167, par: "4/3", si: "17/11", tip: "Accurate pitch required.", desc: "Tactical short hole." },
-            3: { name: "Marker Pole", img: "images/hole3.webp", w: 443, y: 433, r: 421, par: "4/5", si: 1, tip: "Blind straight tee shot.", desc: "Note the dry ditch." },
-            4: { name: "The Stamp", img: "images/hole4.webp", w: 143, y: 131, r: 119, par: 3, si: 13, tip: "Bunker across the front.", desc: "Club selection is key." },
-            5: { name: "The Plateau", img: "images/hole5.webp", w: 425, y: 415, r: 334, par: 4, si: "3/17", tip: "Steady shot onto the plateau.", desc: "Amen Corner begins." },
-            6: { name: "Hells Corner", img: "images/hole6.webp", w: 182, y: 174, r: 159, par: 3, si: "7/9", tip: "Right to left sloping green.", desc: "Stay alert." },
-            7: { name: "The Bank", img: "images/hole7.webp", w: 199, y: 180, r: 150, par: 3, si: "5/7", tip: "Little room for error.", desc: "The Bank finale." },
-            8: { name: "The Summit", img: "images/hole8.webp", w: 298, y: 291, r: 272, par: 4, si: "15/5", tip: "Outstanding views.", desc: "Highest point." },
-            9: { name: "Devils Horns", img: "images/hole9.webp", w: 388, y: 382, r: 314, par: 4, si: "11/15", tip: "Falls right on the green.", desc: "Testing slope." },
-            10: { name: "The Dell", img: "images/hole10.webp", w: 322, y: 310, r: 251, par: 4, si: "16/14", tip: "Slightly raised green.", desc: "Scenic par 4." },
-            11: { name: "The Trap", img: "images/hole11.webp", w: 173, y: 163, r: 105, par: 3, si: "10/18", tip: "Bunkers either side.", desc: "Stay centered." },
-            12: { name: "Calm", img: "images/hole12.webp", w: 269, y: 264, r: 258, par: 4, si: "18/16", tip: "Driveable green.", desc: "Birdie chance." },
-            13: { name: "Blind Ascent", img: "images/hole13.webp", w: 523, y: 452, r: 442, par: 5, si: "6/8", tip: "Late dogleg left.", desc: "Long journey home." },
-            14: { name: "The Snap", img: "images/hole14.webp", w: 174, y: 168, r: 154, par: 3, si: "14/12", tip: "Accurate tee shot.", desc: "Beautiful par 3." },
-            15: { name: "The Climb", img: "images/hole15.webp", w: 304, y: 298, r: 294, par: 4, si: "8/2", tip: "Plays longer uphill.", desc: "Uphill challenge." },
-            16: { name: "High Pressure", img: "images/hole16.webp", w: 436, y: 430, r: 419, par: "4/5", si: "2/4", tip: "Watch the ditch.", desc: "Pressure is on." },
-            17: { name: "The Firs", img: "images/hole17.webp", w: 416, y: 406, r: 392, par: "4/5", si: "4/10", tip: "Duffers beware.", desc: "The home stretch." },
-            18: { name: "The Finale", img: "images/hole18.webp", w: 318, y: 308, r: 298, par: 4, si: "12/6", tip: "In front of the clubhouse.", desc: "The final test." }
+            1: { name: "The Dog-Leg", img: "images/hole1.webp", w: 483, y: 473, r: 464, par: 5, si: 9, tip: "A straight tee shot is required.", desc: "A challenging start to your round." },
+            2: { name: "Risk & Reward", img: "images/hole2.webp", w: 257, y: 251, r: 167, par: "4/3", si: "17/11", tip: "Accurate pitch required.", desc: "Tactical short par 4." },
+            3: { name: "Marker Pole", img: "images/hole3.webp", w: 443, y: 433, r: 421, par: "4/5", si: 1, tip: "Blind straight tee shot.", desc: "The hardest hole on the course." },
+            4: { name: "The Stamp", img: "images/hole4.webp", w: 143, y: 131, r: 119, par: 3, si: 13, tip: "Club selection is everything here.", desc: "Classic par 3 over the bunker." },
+            5: { name: "The Plateau", img: "images/hole5.webp", w: 425, y: 415, r: 334, par: 4, si: "3/17", tip: "Tee shot must find the plateau.", desc: "Amen Corner begins." },
+            6: { name: "Hells Corner", img: "images/hole6.webp", w: 182, y: 174, r: 159, par: 3, si: "7/9", tip: "Green slopes heavily right to left.", desc: "A daunting par 3." },
+            7: { name: "The Bank", img: "images/hole7.webp", w: 199, y: 180, r: 150, par: 3, si: "5/7", tip: "Don't be short, use the bank.", desc: "The final part of Amen Corner." },
+            8: { name: "The Summit", img: "images/hole8.webp", w: 298, y: 291, r: 272, par: 4, si: "15/5", tip: "Enjoy the views before you putt.", desc: "Highest point of the course." },
+            9: { name: "Devils Horns", img: "images/hole9.webp", w: 388, y: 382, r: 314, par: 4, si: "11/15", tip: "Green falls away to the right.", desc: "A fine hole back to the club." },
+            10: { name: "The Dell", img: "images/hole10.webp", w: 322, y: 310, r: 251, par: 4, si: "16/14", tip: "Stay left to avoid the trouble.", desc: "Scenic start to the back nine." },
+            11: { name: "The Trap", img: "images/hole11.webp", w: 173, y: 163, r: 105, par: 3, si: "10/18", tip: "Bunkers protect the center.", desc: "A testing par 3." },
+            12: { name: "Calm", img: "images/hole12.webp", w: 269, y: 264, r: 258, par: 4, si: "18/16", tip: "Driveable for long hitters.", desc: "Your best birdie chance." },
+            13: { name: "Blind Ascent", img: "images/hole13.webp", w: 523, y: 452, r: 442, par: 5, si: "6/8", tip: "Dogleg left late in the hole.", desc: "A long climb home." },
+            14: { name: "The Snap", img: "images/hole14.webp", w: 174, y: 168, r: 154, par: 3, si: "14/12", tip: "Accurate clubbing is essential.", desc: "Short but dangerous." },
+            15: { name: "The Climb", img: "images/hole15.webp", w: 304, y: 298, r: 294, par: 4, si: "8/2", tip: "Plays longer than the yardage.", desc: "Uphill battle." },
+            16: { name: "High Pressure", img: "images/hole16.webp", w: 436, y: 430, r: 419, par: "4/5", si: "2/4", tip: "Beware the ditch crossing.", desc: "A tough finish." },
+            17: { name: "The Firs", img: "images/hole17.webp", w: 416, y: 406, r: 392, par: "4/5", si: "4/10", tip: "Keep it down the middle.", desc: "A true parkland test." },
+            18: { name: "The Finale", img: "images/hole18.webp", w: 318, y: 308, r: 298, par: 4, si: "12/6", tip: "In front of the clubhouse gallery.", desc: "The final test." }
         };
 
         const membershipData = [
@@ -369,7 +385,6 @@
             }
         }
 
-        // INIT UI Elements
         const navCont = document.getElementById('hole-nav-container');
         for (let i = 1; i <= 18; i++) {
             const div = document.createElement('div');
@@ -389,7 +404,6 @@
         const navLinks = document.getElementById('nav-links');
         menuBtn.onclick = () => navLinks.classList.toggle('translate-x-full');
 
-        // Fix: Auto-close mobile menu
         document.querySelectorAll('#nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 if (!window.matchMedia("(min-width: 768px)").matches) {
