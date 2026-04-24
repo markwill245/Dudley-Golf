@@ -6,31 +6,33 @@
     <title>Dudley Golf Club | Heritage & Excellence</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-   <style>
-    :root { --gold: #C5A367; --forest: #132419; --cream: #F9F7F2; }
-
-    /* Force the menu to hide on mobile when the class is present */
-    @media (max-width: 767px) {
-        #nav-links.translate-x-full {
-            transform: translateX(100%) !important;
-            pointer-events: none;
+    <style>
+        :root { --gold: #C5A367; --forest: #132419; --cream: #F9F7F2; }
+        body { font-family: 'Outfit', sans-serif; background-color: var(--cream); color: var(--forest); scroll-behavior: smooth; }
+        h1, h2, h3, h4, .serif { font-family: 'Cormorant Garamond', serif; }
+        .nav-blur { backdrop-filter: blur(12px); background: rgba(19, 36, 25, 0.95); }
+        
+        /* Fixed Mobile Menu Styles */
+        @media (max-width: 767px) {
+            #nav-links.translate-x-full {
+                transform: translateX(100%) !important;
+                pointer-events: none;
+            }
         }
-    }
-    
-    body { font-family: 'Outfit', sans-serif; background-color: var(--cream); color: var(--forest); scroll-behavior: smooth; }
-    h1, h2, h3, h4, .serif { font-family: 'Cormorant Garamond', serif; }
-    .nav-blur { backdrop-filter: blur(12px); background: rgba(19, 36, 25, 0.95); }
-    .hole-card { min-width: 140px; flex-shrink: 0; transition: all 0.3s ease; }
-    @media (min-width: 768px) { .hole-card { min-width: 100%; } }
-    .hole-card.active { border-bottom: 4px solid var(--gold); background: white; }
-    @media (min-width: 768px) { .hole-card.active { border-bottom: none; border-left: 4px solid var(--gold); } }
-    .custom-scrollbar::-webkit-scrollbar { display: none; }
-    .hero-bg { 
-        background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('pro-shop-hero.webp');
-        background-size: cover; background-position: center;
-    }
-    :target { scroll-margin-top: 100px; }
-</style>
+
+        .hole-card { min-width: 140px; flex-shrink: 0; transition: all 0.3s ease; }
+        @media (min-width: 768px) { .hole-card { min-width: 100%; } }
+        .hole-card.active { border-bottom: 4px solid var(--gold); background: white; }
+        @media (min-width: 768px) { .hole-card.active { border-bottom: none; border-left: 4px solid var(--gold); } }
+        
+        .custom-scrollbar::-webkit-scrollbar { display: none; }
+        
+        .hero-bg { 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?q=80');
+            background-size: cover; background-position: center;
+        }
+        :target { scroll-margin-top: 100px; }
+    </style>
 </head>
 <body class="antialiased">
 
@@ -43,29 +45,28 @@
     </div>
 
     <nav class="sticky top-0 w-full z-[60] px-8 py-4 flex justify-between items-center text-white nav-blur border-b border-white/10">
-    <a href="#" class="flex flex-col relative z-[100]">
-        <span class="serif text-2xl tracking-widest leading-none">DUDLEY</span>
-        <span class="text-[8px] tracking-[0.4em] uppercase text-[#C5A367]">Golf Club Est. 1893</span>
-    </a>
-    
-    <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-[100] p-2 focus:outline-none">
-        <div class="w-6 h-0.5 bg-[#C5A367]"></div>
-        <div class="w-6 h-0.5 bg-[#C5A367]"></div>
-        <div class="w-6 h-0.5 bg-[#C5A367]"></div>
-    </button>
-
-    <div id="nav-links" class="fixed inset-0 bg-[#132419] z-[90] flex flex-col items-center justify-center gap-8 translate-x-full transition-transform ease-in-out duration-500 pointer-events-none md:static md:inset-auto md:bg-transparent md:flex-row md:translate-x-0 md:pointer-events-auto">
+        <a href="#" class="flex flex-col relative z-[100]">
+            <span class="serif text-2xl tracking-widest leading-none">DUDLEY</span>
+            <span class="text-[8px] tracking-[0.4em] uppercase text-[#C5A367]">Golf Club Est. 1893</span>
+        </a>
         
-        <a href="#" class="text-2xl md:text-sm uppercase tracking-widest text-white hover:text-[#C5A367] transition">Home</a>
-<a href="#course" class="text-2xl md:text-sm uppercase tracking-widest text-white hover:text-[#C5A367] transition">Course Guide</a>
-<a href="#heritage" class="text-2xl md:text-sm uppercase tracking-widest text-white hover:text-[#C5A367] transition">History</a>
-<a href="#pro-shop" class="text-2xl md:text-sm uppercase tracking-widest text-white hover:text-[#C5A367] transition">Pro Shop</a>
-<a href="#visitors" class="text-2xl md:text-sm uppercase tracking-widest text-white hover:text-[#C5A367] transition">Visitors</a>
-<a href="#membership" class="text-2xl md:text-sm uppercase tracking-widest text-white hover:text-[#C5A367] transition">Membership</a>
-    </div>
-    
-    <a href="https://www.dudleygolfclub.com/login.php" target="_blank" class="relative z-[100] border border-[#C5A367] text-[#C5A367] px-4 md:px-5 py-2 text-[8px] md:text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition">Member Login</a>
-</nav>
+        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-[100] p-2 focus:outline-none">
+            <div class="w-6 h-0.5 bg-[#C5A367]"></div>
+            <div class="w-6 h-0.5 bg-[#C5A367]"></div>
+            <div class="w-6 h-0.5 bg-[#C5A367]"></div>
+        </button>
+
+        <div id="nav-links" class="fixed inset-0 bg-[#132419] z-[90] flex flex-col items-center justify-center gap-8 translate-x-full transition-transform ease-in-out duration-500 pointer-events-none md:static md:inset-auto md:bg-transparent md:flex-row md:translate-x-0 md:pointer-events-auto text-[12px] uppercase tracking-[0.4em] font-semibold">
+            <a href="#" class="hover:text-[#C5A367] transition">Home</a>
+            <a href="#course" class="hover:text-[#C5A367] transition">Course Guide</a>
+            <a href="#heritage" class="hover:text-[#C5A367] transition">History</a>
+            <a href="#pro-shop" class="hover:text-[#C5A367] transition">Pro Shop</a>
+            <a href="#visitors" class="hover:text-[#C5A367] transition">Visitors</a>
+            <a href="#membership" class="hover:text-[#C5A367] transition">Membership</a>
+        </div>
+        
+        <a href="https://www.dudleygolfclub.com/login.php" target="_blank" class="relative z-[100] border border-[#C5A367] text-[#C5A367] px-4 md:px-5 py-2 text-[8px] md:text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition">Member Login</a>
+    </nav>
 
     <header class="hero-bg h-[70vh] flex items-center justify-center text-center text-white">
         <div class="max-w-4xl px-4">
@@ -210,7 +211,7 @@
             <div class="grid lg:grid-cols-3 gap-8 mb-16">
                 <div class="lg:col-span-2 bg-[#132419] p-1 border-4 border-[#C5A367] shadow-2xl">
                     <div class="bg-[#132419] p-10">
-                        <h3 class="serif text-4xl text-[#C5A367] mb-10 uppercase tracking-widest text-center">Green Fees</h3>
+                        <h3 class="serif text-4xl text-[#C5A367] mb-10 uppercase tracking-widest text-center">Green Fees — 2026</h3>
                         <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
                             <div class="border-b border-[#C5A367]/30 pb-4 flex justify-between items-end text-white">
                                 <span class="text-sm">Visitors (Mon-Fri)</span><span class="serif text-3xl text-[#C5A367]">£25.00</span>
@@ -232,8 +233,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-white p-10 border border-gray-100 flex flex-col justify-center shadow-lg">
-                    <h4 class="serif text-3xl text-[#132419] mb-6">Arrival Info</h4>
+                <div class="bg-white p-10 border border-gray-100 flex flex-col justify-center shadow-lg text-[#132419]">
+                    <h4 class="serif text-3xl mb-6">Arrival Info</h4>
                     <ul class="space-y-4 text-xs tracking-wide uppercase opacity-70">
                         <li><span class="text-[#C5A367] font-black mr-2">/</span> Report to Pro Shop</li>
                         <li><span class="text-[#C5A367] font-black mr-2">/</span> 8:00AM Summer Opening</li>
@@ -265,14 +266,13 @@
                     <p class="font-bold text-white opacity-100 uppercase text-[10px] tracking-widest">Our Location</p>
                     <p>Turners Hill, Oakham,<br>Dudley, West Midlands, DY2 7JL</p>
                     <p>Pro Shop: 01384 254020<br>Office: 01384 253020</p>
-                    <p>professional@dudleygolfclub.com</p>
                 </div>
                 <div class="pt-8 border-t border-white/10 text-[9px] uppercase tracking-[0.3em] opacity-40">
                     © <span id="year"></span> Dudley Golf Club. All Rights Reserved.
                 </div>
             </div>
             <div class="h-80 w-full bg-white/5 border border-white/10 rounded-sm overflow-hidden grayscale opacity-80 hover:grayscale-0 transition-all duration-700 shadow-2xl">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2430.732432243764!2d-2.0863892!3d52.4839167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870903332159847%3A0x633d45c58ecb9745!2sDudley%20Golf%20Club!5e0!3m2!1sen!2suk!4v1715000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.4682054238515!2d-2.072235923319084!3d52.50684197205844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870908861d9a263%3A0x63359d997cc037b5!2sDudley%20Golf%20Club!5e0!3m2!1sen!2suk!4v1709142000000!5m2!1sen!2suk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </footer>
@@ -292,131 +292,126 @@
         </div>
     </div>
 
-   <script>
-    const courseData = {
-        1: { name: "The Dog-Leg", img: "images/hole1.webp", w: 483, y: 473, r: 464, par: 5, si: 9, tip: "A straight tee shot is required.", desc: "A challenging start to your round." },
-        2: { name: "Risk & Reward", img: "images/hole2.webp", w: 257, y: 251, r: 167, par: "4/3", si: "17/11", tip: "Accurate pitch required.", desc: "Tactical short par 4." },
-        3: { name: "Marker Pole", img: "images/hole3.webp", w: 443, y: 433, r: 421, par: "4/5", si: 1, tip: "Blind straight tee shot.", desc: "The hardest hole on the course." },
-        4: { name: "The Stamp", img: "images/hole4.webp", w: 143, y: 131, r: 119, par: 3, si: 13, tip: "Club selection is everything here.", desc: "Classic par 3 over the bunker." },
-        5: { name: "The Plateau", img: "images/hole5.webp", w: 425, y: 415, r: 334, par: 4, si: "3/17", tip: "Tee shot must find the plateau.", desc: "Amen Corner begins." },
-        6: { name: "Hells Corner", img: "images/hole6.webp", w: 182, y: 174, r: 159, par: 3, si: "7/9", tip: "Green slopes heavily right to left.", desc: "A daunting par 3." },
-        7: { name: "The Bank", img: "images/hole7.webp", w: 199, y: 180, r: 150, par: 3, si: "5/7", tip: "Don't be short, use the bank.", desc: "The final part of Amen Corner." },
-        8: { name: "The Summit", img: "images/hole8.webp", w: 298, y: 291, r: 272, par: 4, si: "15/5", tip: "Enjoy the views before you putt.", desc: "Highest point of the course." },
-        9: { name: "Devils Horns", img: "images/hole9.webp", w: 388, y: 382, r: 314, par: 4, si: "11/15", tip: "Green falls away to the right.", desc: "A fine hole back to the club." },
-        10: { name: "The Dell", img: "images/hole10.webp", w: 322, y: 310, r: 251, par: 4, si: "16/14", tip: "Stay left to avoid the trouble.", desc: "Scenic start to the back nine." },
-        11: { name: "The Trap", img: "images/hole11.webp", w: 173, y: 163, r: 105, par: 3, si: "10/18", tip: "Bunkers protect the center.", desc: "A testing par 3." },
-        12: { name: "Calm", img: "images/hole12.webp", w: 269, y: 264, r: 258, par: 4, si: "18/16", tip: "Driveable for long hitters.", desc: "Your best birdie chance." },
-        13: { name: "Blind Ascent", img: "images/hole13.webp", w: 523, y: 452, r: 442, par: 5, si: "6/8", tip: "Dogleg left late in the hole.", desc: "A long climb home." },
-        14: { name: "The Snap", img: "images/hole14.webp", w: 174, y: 168, r: 154, par: 3, si: "14/12", tip: "Accurate clubbing is essential.", desc: "Short but dangerous." },
-        15: { name: "The Climb", img: "images/hole15.webp", w: 304, y: 298, r: 294, par: 4, si: "8/2", tip: "Plays longer than the yardage.", desc: "Uphill battle." },
-        16: { name: "High Pressure", img: "images/hole16.webp", w: 436, y: 430, r: 419, par: "4/5", si: "2/4", tip: "Beware the ditch crossing.", desc: "A tough finish." },
-        17: { name: "The Firs", img: "images/hole17.webp", w: 416, y: 406, r: 392, par: "4/5", si: "4/10", tip: "Keep it down the middle.", desc: "A true parkland test." },
-        18: { name: "The Finale", img: "images/hole18.webp", w: 318, y: 308, r: 298, par: 4, si: "12/6", tip: "In front of the clubhouse gallery.", desc: "The final test." }
-    };
+    <script>
+        const courseData = {
+            1: { name: "The Dog-Leg", img: "images/hole1.webp", w: 483, y: 473, r: 464, par: 5, si: 9, tip: "A straight tee shot is required to a long left sweeping fairway.", desc: "A challenging start to the round requiring precision from the tee." },
+            2: { name: "Risk & Reward", img: "images/hole2.webp", w: 257, y: 251, r: 167, par: "4/3", si: "17/11", tip: "A steady tee shot followed by an accurate pitch to a narrow raised green.", desc: "Test your nerve on this tactical short hole." },
+            3: { name: "Marker Pole", img: "images/hole3.webp", w: 443, y: 433, r: 421, par: "4/5", si: 1, tip: "A difficult blind straight tee shot.", desc: "Note the horizontal dry ditch across the fairway." },
+            4: { name: "The Stamp", img: "images/hole4.webp", w: 143, y: 131, r: 119, par: 3, si: 13, tip: "Our own postage stamp hole with a bunker across the front.", desc: "Short but dangerous. Club selection is everything." },
+            5: { name: "The Plateau", img: "images/hole5.webp", w: 425, y: 415, r: 334, par: 4, si: "3/17", tip: "Steady shot onto the top of a plateau fairway.", desc: "The first hole of our famous 'Amen Corner'." },
+            6: { name: "Hells Corner", img: "images/hole6.webp", w: 182, y: 174, r: 159, par: 3, si: "7/9", tip: "A long difficult hole to a right to left sloping green.", desc: "The second challenge of Amen Corner." },
+            7: { name: "The Bank", img: "images/hole7.webp", w: 199, y: 180, r: 150, par: 3, si: "5/7", tip: "Very little room for manoeuvre.", desc: "The finale of Amen Corner." },
+            8: { name: "The Summit", img: "images/hole8.webp", w: 298, y: 291, r: 272, par: 4, si: "15/5", tip: "Outstanding views across several counties.", desc: "The peak of the course with breathtaking panoramas." },
+            9: { name: "Devils Horns", img: "images/hole9.webp", w: 388, y: 382, r: 314, par: 4, si: "11/15", tip: "Everything falls right onto the green.", desc: "A tight fairway that tests your ability to play the slopes." },
+            10: { name: "The Dell", img: "images/hole10.webp", w: 322, y: 310, r: 251, par: 4, si: "16/14", tip: "A straight forward hole onto a slightly raised green.", desc: "Accuracy is rewarded on this scenic par 4." },
+            11: { name: "The Trap", img: "images/hole11.webp", w: 173, y: 163, r: 105, par: 3, si: "10/18", tip: "Bunkers either side to be aware of.", desc: "Stay centered to avoid the sand traps." },
+            12: { name: "Calm", img: "images/hole12.webp", w: 269, y: 264, r: 258, par: 4, si: "18/16", tip: "Possible to hit the green with a good tee shot.", desc: "A generous fairway offering a real birdie opportunity." },
+            13: { name: "Blind Ascent", img: "images/hole13.webp", w: 523, y: 452, r: 442, par: 5, si: "6/8", tip: "A late dogleg left after downhill shots.", desc: "A long journey home requiring strong ball striking." },
+            14: { name: "The Snap", img: "images/hole14.webp", w: 174, y: 168, r: 154, par: 3, si: "14/12", tip: "A slightly downhill green requires an accurate tee shot.", desc: "A beautiful drop shot par 3." },
+            15: { name: "The Climb", img: "images/hole15.webp", w: 304, y: 298, r: 294, par: 4, si: "8/2", tip: "Uphill ground makes it longer than you think.", desc: "Don't let the yardage fool you." },
+            16: { name: "High Pressure", img: "images/hole16.webp", w: 436, y: 430, r: 419, par: "4/5", si: "2/4", tip: "A very tough long hole with a ditch.", desc: "Tests your nerve and power." },
+            17: { name: "The Firs", img: "images/hole17.webp", w: 416, y: 406, r: 392, par: "4/5", si: "4/10", tip: "A par requires four very good shots.", desc: "A demanding hole as you approach the clubhouse." },
+            18: { name: "The Finale", img: "images/hole18.webp", w: 318, y: 308, r: 298, par: 4, si: "12/6", tip: "A slight dogleg right brings you home.", desc: "A finishing hole in front of the members." }
+        };
 
-    const membershipData = [
-        { name: "Full Member", price: "£1,150", desc: "Unlimited golf 7 days a week." },
-        { name: "7 Day Restricted", price: "£860", desc: "Weekend and weekday play." },
-        { name: "Junior Member", price: "£50", desc: "Under 18s only." }
-    ];
+        const membershipData = [
+            { name: "Full Member", price: "£1,150", desc: "Unlimited golf 7 days a week, full competition entry and voting rights." },
+            { name: "7 Day Restricted", price: "£860", desc: "For those wanting weekend and weekday play flexibility." },
+            { name: "Junior Member", price: "£50", desc: "Under 18s. Supporting the future generations." }
+        ];
 
-    function updateClock() {
-        const now = new Date();
-        const clockEl = document.getElementById('live-clock');
-        const yearEl = document.getElementById('year');
-        if(clockEl) {
-            clockEl.innerText = now.toLocaleString('en-GB', { 
-                weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' 
-            });
+        function updateClock() {
+            const now = new Date();
+            const clockEl = document.getElementById('live-clock');
+            const yearEl = document.getElementById('year');
+            if(clockEl) {
+                clockEl.innerText = now.toLocaleString('en-GB', { 
+                    weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' 
+                });
+            }
+            if(yearEl && yearEl.innerText === "") yearEl.innerText = now.getFullYear();
         }
-        if(yearEl && yearEl.innerText === "") {
-            yearEl.innerText = now.getFullYear();
+
+        function setHole(n) {
+            const h = courseData[n];
+            document.getElementById('h-num').innerText = n.toString().padStart(2, '0');
+            document.getElementById('h-name').innerText = h.name;
+            document.getElementById('h-par-si').innerText = `P${h.par} / S${h.si}`;
+            document.getElementById('h-white').innerText = h.w;
+            document.getElementById('h-yellow').innerText = h.y;
+            document.getElementById('h-red').innerText = h.r;
+            document.getElementById('h-desc').innerText = h.desc;
+            document.getElementById('h-tip').innerText = h.tip;
+            document.getElementById('h-img').src = h.img;
+            document.querySelectorAll('.hole-card').forEach(c => c.classList.remove('active'));
+            document.getElementById(`h-${n}`).classList.add('active');
         }
-    }
 
-    function setHole(n) {
-        const h = courseData[n];
-        document.getElementById('h-num').innerText = n.toString().padStart(2, '0');
-        document.getElementById('h-name').innerText = h.name;
-        document.getElementById('h-par-si').innerText = `P${h.par} / S${h.si}`;
-        document.getElementById('h-white').innerText = h.w;
-        document.getElementById('h-yellow').innerText = h.y;
-        document.getElementById('h-red').innerText = h.r;
-        document.getElementById('h-desc').innerText = h.desc;
-        document.getElementById('h-tip').innerText = h.tip;
-        document.getElementById('h-img').src = h.img;
-        document.querySelectorAll('.hole-card').forEach(c => c.classList.remove('active'));
-        document.getElementById(`h-${n}`).classList.add('active');
-    }
-
-    function toggleScorecard() {
-        const modal = document.getElementById('scorecard-modal');
-        modal.classList.toggle('hidden');
-        modal.classList.toggle('flex');
-        const body = document.getElementById('scorecard-body');
-        if (body.innerHTML === "") {
-            Object.keys(courseData).forEach(i => {
-                const h = courseData[i];
-                body.innerHTML += `<tr class="border-b border-gray-100"><td class="p-3 font-bold">${i}</td><td class="p-3 text-left">${h.name}</td><td class="p-3">${h.w}</td><td class="p-3">${h.y}</td><td class="p-3">${h.r}</td><td class="p-3">${h.par}</td><td class="p-3">${h.si}</td></tr>`;
-            });
+        function toggleScorecard() {
+            const modal = document.getElementById('scorecard-modal');
+            modal.classList.toggle('hidden');
+            modal.classList.toggle('flex');
+            const body = document.getElementById('scorecard-body');
+            if (body.innerHTML === "") {
+                Object.keys(courseData).forEach(i => {
+                    const h = courseData[i];
+                    body.innerHTML += `<tr class="border-b border-gray-100 hover:bg-white transition"><td class="p-3 font-bold bg-gray-50">${i}</td><td class="p-3 text-left italic">${h.name}</td><td class="p-3">${h.w}</td><td class="p-3 text-yellow-600 font-bold">${h.y}</td><td class="p-3 text-red-600 font-bold">${h.r}</td><td class="p-3">${h.par}</td><td class="p-3 font-black">${h.si}</td></tr>`;
+                });
+            }
         }
-    }
 
-    // Initialize Holes
-    const navCont = document.getElementById('hole-nav-container');
-    for (let i = 1; i <= 18; i++) {
-        const div = document.createElement('div');
-        div.id = `h-${i}`;
-        div.className = "hole-card p-4 border border-gray-200/50 cursor-pointer";
-        div.innerHTML = `<p class="text-[10px] font-bold">Hole ${i}</p><p class="serif text-xs">${courseData[i].name}</p>`;
-        div.onclick = () => setHole(i);
-        navCont.appendChild(div);
-    }
+        const navCont = document.getElementById('hole-nav-container');
+        for (let i = 1; i <= 18; i++) {
+            const div = document.createElement('div');
+            div.id = `h-${i}`;
+            div.className = "hole-card p-4 border border-gray-200/50 cursor-pointer";
+            div.innerHTML = `<p class="text-[10px] font-bold">Hole ${i}</p><p class="serif text-xs">${courseData[i].name}</p>`;
+            div.onclick = () => setHole(i);
+            navCont.appendChild(div);
+        }
 
-    // Initialize Membership
-    const mGrid = document.getElementById('membership-grid');
-    membershipData.forEach(m => {
-        mGrid.innerHTML += `<div class="p-10 border border-white/10 bg-white/5"><h4 class="serif text-3xl mb-4 text-[#C5A367]">${m.name}</h4><p class="text-4xl mb-6">${m.price}</p><p class="text-sm opacity-50 mb-8">${m.desc}</p><a href="tel:01384254020" class="border border-[#C5A367] px-6 py-2 text-[10px] uppercase">Inquire</a></div>`;
-    });
-
-    // Mobile Menu Logic
-    const menuBtn = document.getElementById('menu-btn');
-    const navLinks = document.getElementById('nav-links');
-
-    function closeMenu() {
-        navLinks.classList.add('translate-x-full');
-        navLinks.classList.add('pointer-events-none');
-        document.body.style.overflow = 'auto';
-    }
-
-    function openMenu() {
-        navLinks.classList.remove('translate-x-full');
-        navLinks.classList.remove('pointer-events-none');
-        document.body.style.overflow = 'hidden';
-    }
-
-    menuBtn.onclick = (e) => {
-        e.stopPropagation();
-        const isClosed = navLinks.classList.contains('translate-x-full');
-        if (isClosed) openMenu(); else closeMenu();
-    };
-
-    document.querySelectorAll('#nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth < 768) closeMenu();
+        const mGrid = document.getElementById('membership-grid');
+        membershipData.forEach(m => {
+            mGrid.innerHTML += `<div class="p-10 border border-white/10 bg-white/5 shadow-2xl flex flex-col items-center text-center"><h4 class="serif text-3xl mb-4 italic text-[#C5A367] font-bold">${m.name}</h4><p class="text-4xl font-light mb-6 font-bold">${m.price}</p><p class="text-sm text-gray-400 leading-relaxed mb-8 italic">${m.desc}</p><a href="tel:01384254020" class="text-[10px] uppercase tracking-widest border border-[#C5A367] px-6 py-2 hover:bg-[#C5A367] transition">Inquire</a></div>`;
         });
-    });
 
-    document.addEventListener('click', (e) => {
-        if (window.innerWidth < 768 && !navLinks.classList.contains('translate-x-full') && !navLinks.contains(e.target) && e.target !== menuBtn) {
-            closeMenu();
+        // Fixed Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        function closeMenu() {
+            navLinks.classList.add('translate-x-full');
+            navLinks.classList.add('pointer-events-none');
+            document.body.style.overflow = 'auto';
         }
-    });
 
-    // Start Everything
-    updateClock();
-    setInterval(updateClock, 1000);
-    setHole(1);
-</script>
+        function openMenu() {
+            navLinks.classList.remove('translate-x-full');
+            navLinks.classList.remove('pointer-events-none');
+            document.body.style.overflow = 'hidden';
+        }
+
+        menuBtn.onclick = (e) => {
+            e.stopPropagation();
+            const isClosed = navLinks.classList.contains('translate-x-full');
+            if (isClosed) openMenu(); else closeMenu();
+        };
+
+        document.querySelectorAll('#nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) closeMenu();
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth < 768 && !navLinks.classList.contains('translate-x-full') && !navLinks.contains(e.target) && e.target !== menuBtn) {
+                closeMenu();
+            }
+        });
+
+        updateClock();
+        setInterval(updateClock, 1000);
+        setHole(1);
+    </script>
 </body>
 </html>
