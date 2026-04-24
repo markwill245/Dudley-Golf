@@ -12,8 +12,11 @@
         h1, h2, h3, h4, .serif { font-family: 'Cormorant Garamond', serif; }
         .nav-blur { backdrop-filter: blur(12px); background: rgba(19, 36, 25, 0.95); }
         
-        /* Fixed Mobile Menu Styles */
+        /* FIXED FOREST GREEN MOBILE MENU */
         @media (max-width: 767px) {
+            #nav-links {
+                background-color: #132419 !important; /* Solid Forest Green background */
+            }
             #nav-links.translate-x-full {
                 transform: translateX(100%) !important;
                 pointer-events: none;
@@ -27,6 +30,7 @@
         
         .custom-scrollbar::-webkit-scrollbar { display: none; }
         
+        /* HERO IMAGE: Golf ball on the lip of the hole */
         .hero-bg { 
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?q=80');
             background-size: cover; background-position: center;
@@ -56,7 +60,7 @@
             <div class="w-6 h-0.5 bg-[#C5A367]"></div>
         </button>
 
-        <div id="nav-links" class="fixed inset-0 bg-[#132419] z-[90] flex flex-col items-center justify-center gap-8 translate-x-full transition-transform ease-in-out duration-500 pointer-events-none md:static md:inset-auto md:bg-transparent md:flex-row md:translate-x-0 md:pointer-events-auto text-[12px] uppercase tracking-[0.4em] font-semibold">
+        <div id="nav-links" class="fixed inset-0 z-[90] flex flex-col items-center justify-center gap-8 translate-x-full transition-transform ease-in-out duration-500 pointer-events-none md:static md:inset-auto md:bg-transparent md:flex-row md:translate-x-0 md:pointer-events-auto text-[12px] uppercase tracking-[0.4em] font-semibold">
             <a href="#" class="hover:text-[#C5A367] transition">Home</a>
             <a href="#course" class="hover:text-[#C5A367] transition">Course Guide</a>
             <a href="#heritage" class="hover:text-[#C5A367] transition">History</a>
@@ -128,7 +132,7 @@
                 <div class="lg:w-1/2 relative">
                     <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-[#C5A367] z-0"></div>
                     <div class="relative z-10 bg-[#132419] p-2 shadow-2xl">
-                        <img src="pro-shop-hero.webp." alt="PGA Professional" class="w-full h-[500px] object-cover grayscale hover:grayscale-0 transition duration-700">
+                        <img src="pro-shop-hero.webp" alt="PGA Professional" class="w-full h-[500px] object-cover grayscale hover:grayscale-0 transition duration-700">
                     </div>
                 </div>
                 <div class="lg:w-1/2 space-y-8">
@@ -137,21 +141,21 @@
                         <h2 class="serif text-6xl text-[#132419]">Expertise & Equipment</h2>
                     </div>
                     <p class="serif text-2xl italic text-[#132419]/70 leading-relaxed">
-                        "Our Head professional is dedicated to helping you enjoy the game. Whether it's a quick bucket of balls or a full Round of Golf, he will provide a tour-level experience for every member."
+                        "Our PGA professional is dedicated to helping you enjoy the game. Whether it's a quick bucket of balls or a full Round of Golf, he will provide a tour-level experience for every member."
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="border-l-2 border-[#C5A367] pl-6 py-2">
                             <h5 class="font-bold text-[11px] uppercase tracking-widest mb-1">Re-Grip Fitting</h5>
-                            <p class="text-[12px] text-gray-500">Using the most up to date Grips.</p>
+                            <p class="text-[12px] text-gray-500">Using the most up to date grips.</p>
                         </div>
                         <div class="border-l-2 border-[#C5A367] pl-6 py-2">
-                            <h5 class="font-bold text-[11px] uppercase tracking-widest mb-1">Electric Buggies to Hire</h5>
-                            <p class="text-[12px] text-gray-500">Do it In Style.</p>
+                            <h5 class="font-bold text-[11px] uppercase tracking-widest mb-1">PGA Coaching</h5>
+                            <p class="text-[12px] text-gray-500">Individual and group lessons tailored to your skill level.</p>
                         </div>
                     </div>
                     <div class="pt-6 flex flex-wrap gap-4">
                         <a href="tel:01384254020" class="bg-[#132419] text-white px-8 py-4 text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] transition-all">
-                            Book a Tee Time: 01384 254020
+                            Book a Lesson: 01384 254020
                         </a>
                         <div class="flex items-center gap-4 px-4 py-2 border border-gray-100">
                             <span class="text-[9px] uppercase tracking-widest opacity-40 italic">Stockists of:</span>
@@ -365,7 +369,7 @@
             const div = document.createElement('div');
             div.id = `h-${i}`;
             div.className = "hole-card p-4 border border-gray-200/50 cursor-pointer";
-            div.innerHTML = `<p class="text-[10px] font-bold">Hole ${i}</p><p class="serif text-xs">${courseData[i].name}</p>`;
+            div.innerHTML = `<p class="text-[10px] font-bold uppercase tracking-widest">Hole ${i}</p><p class="serif italic text-gray-400 text-xs">${courseData[i].name}</p>`;
             div.onclick = () => setHole(i);
             navCont.appendChild(div);
         }
