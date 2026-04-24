@@ -21,11 +21,24 @@
             background-size: cover; background-position: center;
         }
         :target { scroll-margin-top: 100px; }
+
+        /* Dropdown Styling */
+        .dropdown-content { 
+            opacity: 0; 
+            visibility: hidden; 
+            transform: translateY(10px); 
+            transition: all 0.3s ease; 
+        }
+        .group:hover .dropdown-content { 
+            opacity: 1; 
+            visibility: visible; 
+            transform: translateY(0); 
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <div class="bg-[#0b1610] text-white/70 py-2 px-8 flex justify-between items-center text-[10px] tracking-[0.2em] uppercase border-b border-white/5">
+    <div class="bg-[#0b1610] text-white/70 py-2 px-8 flex justify-between items-center text-[10px] tracking-[0.2em] uppercase border-b border-white/5 relative z-[70]">
         <div id="live-clock">Loading...</div>
         <div class="flex gap-6">
             <span id="weather">Dudley: 14°C</span>
@@ -33,25 +46,48 @@
         </div>
     </div>
 
-    <nav class="sticky top-0 w-full z-50 px-8 py-4 flex justify-between items-center text-white nav-blur border-b border-white/10">
-        <a href="#" class="flex flex-col relative z-50">
+    <nav class="sticky top-0 w-full z-[60] px-8 py-4 flex justify-between items-center text-white nav-blur border-b border-white/10">
+        <a href="#" class="flex flex-col relative z-[100]">
             <span class="serif text-2xl tracking-widest leading-none">DUDLEY</span>
             <span class="text-[8px] tracking-[0.4em] uppercase text-[#C5A367]">Golf Club Est. 1893</span>
         </a>
-        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-50 p-2 focus:outline-none">
+        
+        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-[100] p-2 focus:outline-none">
             <div class="w-6 h-0.5 bg-[#C5A367]"></div>
             <div class="w-6 h-0.5 bg-[#C5A367]"></div>
             <div class="w-6 h-0.5 bg-[#C5A367]"></div>
         </button>
+
         <div id="nav-links" class="fixed inset-0 bg-[#132419] flex flex-col items-center justify-center gap-8 text-[12px] uppercase tracking-[0.4em] font-semibold transition-transform duration-300 translate-x-full md:relative md:inset-auto md:bg-transparent md:flex-row md:translate-x-0 md:gap-10 md:text-[10px] md:tracking-[0.2em] z-40">
-            <a href="#" class="hover:text-[#C5A367] transition">Home</a>
-            <a href="#course" class="hover:text-[#C5A367] transition">Course Guide</a>
-            <a href="#heritage" class="hover:text-[#C5A367] transition">History</a>
-            <a href="#pro-shop" class="hover:text-[#C5A367] transition">Pro Shop</a>
-            <a href="#visitors" class="hover:text-[#C5A367] transition">Visitors</a>
-            <a href="#membership" class="hover:text-[#C5A367] transition">Membership</a>
+            <a href="#" class="text-white hover:text-[#C5A367] transition">Home</a>
+            
+            <div class="relative group">
+                <button class="text-white hover:text-[#C5A367] transition flex items-center gap-1 uppercase">
+                    Course Guide <svg class="w-3 h-3 group-hover:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="dropdown-content md:absolute static left-0 mt-4 w-48 bg-white text-[#132419] shadow-xl border-t-2 border-[#C5A367]">
+                    <a href="#course" class="block px-6 py-3 hover:bg-gray-100 hover:text-[#C5A367] text-[10px] border-b">The Course</a>
+                    <a href="#course" class="block px-6 py-3 hover:bg-gray-100 hover:text-[#C5A367] text-[10px]">Hole by Hole</a>
+                </div>
+            </div>
+
+            <a href="#heritage" class="text-white hover:text-[#C5A367] transition">History</a>
+            <a href="#pro-shop" class="text-white hover:text-[#C5A367] transition">Pro Shop</a>
+            
+            <div class="relative group">
+                <button class="text-white hover:text-[#C5A367] transition flex items-center gap-1 uppercase">
+                    Visitors <svg class="w-3 h-3 group-hover:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="dropdown-content md:absolute static left-0 mt-4 w-48 bg-white text-[#132419] shadow-xl border-t-2 border-[#C5A367]">
+                    <a href="#visitors" class="block px-6 py-3 hover:bg-gray-100 hover:text-[#C5A367] text-[10px] border-b">Green Fees</a>
+                    <a href="https://www.dudleygolfclub.com/visitor_booking.php" target="_blank" class="block px-6 py-3 hover:bg-gray-100 hover:text-[#C5A367] text-[10px]">Book Tee Time</a>
+                </div>
+            </div>
+
+            <a href="#membership" class="text-white hover:text-[#C5A367] transition">Membership</a>
         </div>
-        <a href="https://www.dudleygolfclub.com/login.php" target="_blank" class="relative z-50 border border-[#C5A367] text-[#C5A367] px-4 md:px-5 py-2 text-[8px] md:text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition">Member Login</a>
+        
+        <a href="https://www.dudleygolfclub.com/login.php" target="_blank" class="relative z-[100] border border-[#C5A367] text-[#C5A367] px-4 md:px-5 py-2 text-[8px] md:text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition">Member Login</a>
     </nav>
 
     <header class="hero-bg h-[70vh] flex items-center justify-center text-center text-white">
@@ -108,27 +144,23 @@
         </div>
     </section>
 
-   <section id="pro-shop" class="bg-white py-24 px-4 border-b border-gray-100">
+    <section id="pro-shop" class="bg-white py-24 px-4 border-b border-gray-100">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col lg:flex-row gap-20 items-center">
                 <div class="lg:w-1/2 relative">
                     <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-[#C5A367] z-0"></div>
                     <div class="relative z-10 bg-[#132419] p-2 shadow-2xl">
-                        
-                        <img src="pro-shop-hero.webp.webp" alt="PGA Professional" class="w-full h-[500px] object-cover grayscale hover:grayscale-0 transition duration-700">
+                        <img src="pro-shop-hero.webp" alt="PGA Professional" class="w-full h-[500px] object-cover grayscale hover:grayscale-0 transition duration-700">
                     </div>
                 </div>
-
                 <div class="lg:w-1/2 space-y-8">
                     <div class="space-y-2">
                         <h4 class="text-[#C5A367] text-[10px] uppercase tracking-[0.4em] font-bold">The Academy</h4>
                         <h2 class="serif text-6xl text-[#132419]">Expertise & Equipment</h2>
                     </div>
-                    
                     <p class="serif text-2xl italic text-[#132419]/70 leading-relaxed">
                         "Our PGA professional is dedicated to helping you enjoy the game. Whether it's a quick bucket of balls or a full Round of Golf, he will provide a tour-level experience for every member."
                     </p>
-
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="border-l-2 border-[#C5A367] pl-6 py-2">
                             <h5 class="font-bold text-[11px] uppercase tracking-widest mb-1">Re-Grip Fitting</h5>
@@ -139,7 +171,6 @@
                             <p class="text-[12px] text-gray-500">Individual and group lessons tailored to your skill level.</p>
                         </div>
                     </div>
-
                     <div class="pt-6 flex flex-wrap gap-4">
                         <a href="tel:01384254020" class="bg-[#132419] text-white px-8 py-4 text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] transition-all">
                             Book a Lesson: 01384 254020
@@ -217,7 +248,6 @@
                                 <span class="text-sm">Member Guest (Sat-Sun)</span><span class="serif text-3xl text-[#C5A367]">£25.00</span>
                             </div>
                         </div>
-                        
                         <div class="mt-12 text-center">
                             <a href="tel:01384254020" class="inline-block bg-[#C5A367] text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.3em] hover:bg-white hover:text-[#132419] transition-all">
                                 Book a Tee Time: 01384 254020
@@ -255,36 +285,25 @@
                     <span class="serif text-4xl tracking-widest leading-none">DUDLEY</span>
                     <span class="text-[10px] tracking-[0.4em] uppercase text-[#C5A367]">Golf Club Est. 1893</span>
                 </div>
-                
                 <div class="space-y-4 text-sm opacity-70 leading-relaxed">
                     <p class="font-bold text-white opacity-100 uppercase text-[10px] tracking-widest">Our Location</p>
                     <p>Turners Hill, Oakham,<br>Dudley, West Midlands, DY2 7JL</p>
                     <p>Pro Shop: 01384 254020<br>Office: 01384 253020</p>
                     <p>professional@dudleygolfclub.com</p>
                 </div>
-
-                
-
                 <div class="pt-8 border-t border-white/10 text-[9px] uppercase tracking-[0.3em] opacity-40">
                     © <span id="year"></span> Dudley Golf Club. All Rights Reserved.
                 </div>
             </div>
-
             <div class="h-96 w-full bg-white/5 border border-white/10 rounded-sm overflow-hidden grayscale opacity-80 hover:grayscale-0 transition-all duration-700 shadow-2xl">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.188289454848!2d-2.083756823321528!3d52.5119114720613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48709087c2b03657%3A0xc39281a8b60b296f!2sDudley%20Golf%20Club!5e0!3m2!1sen!2suk!4v1715000000000!5m2!1sen!2suk" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2430.730378822471!2d-2.0729796841946026!3d52.48395567980816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870908846c2438b%3A0xc3435649987be758!2sDudley%20Golf%20Club!5e0!3m2!1sen!2suk!4v1680000000000!5m2!1sen!2suk" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </footer>
 
-    <div id="scorecard-modal" class="fixed inset-0 bg-black/90 z-[100] hidden items-center justify-center p-4">
+    <div id="scorecard-modal" class="fixed inset-0 bg-black/90 z-[200] hidden items-center justify-center p-4">
         <div class="bg-[#F9F7F2] p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded shadow-2xl">
             <div class="flex justify-between items-center mb-6 border-b border-gray-200 pb-4">
                 <h3 class="serif text-3xl italic">Official Course Scorecard</h3>
@@ -299,7 +318,7 @@
         </div>
     </div>
 
-  <script>
+    <script>
         const courseData = {
             1: { name: "The Dog-Leg", img: "images/hole1.webp", w: 483, y: 473, r: 464, par: 5, si: 9, tip: "A straight tee shot is required to a long left sweeping fairway.", desc: "A challenging start to the round requiring precision from the tee." },
             2: { name: "Risk & Reward", img: "images/hole2.webp", w: 257, y: 251, r: 167, par: "4/3", si: "17/11", tip: "A steady tee shot followed by an accurate pitch to a narrow raised green.", desc: "Test your nerve on this tactical short hole." },
@@ -327,22 +346,14 @@
             { name: "Junior Member", price: "£50", desc: "Under 18s. Supporting the future generations of the game." }
         ];
 
-        // CLOCK LOGIC
         function updateClock() {
             const now = new Date();
             const clockEl = document.getElementById('live-clock');
             const yearEl = document.getElementById('year');
-            
-            if(clockEl) {
-                clockEl.innerText = now.toLocaleString('en-GB', { 
-                    weekday: 'short', day: 'numeric', month: 'short', 
-                    hour: '2-digit', minute: '2-digit', second: '2-digit' 
-                });
-            }
+            if(clockEl) clockEl.innerText = now.toLocaleString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', second: '2-digit' });
             if(yearEl) yearEl.innerText = now.getFullYear();
         }
 
-        // COURSE GUIDE LOGIC
         function setHole(n) {
             const h = courseData[n];
             document.getElementById('h-num').innerText = n.toString().padStart(2, '0');
@@ -371,7 +382,7 @@
             }
         }
 
-        // INITIALIZE PAGE
+        // INIT
         const navCont = document.getElementById('hole-nav-container');
         for (let i = 1; i <= 18; i++) {
             const div = document.createElement('div');
@@ -387,12 +398,10 @@
             mGrid.innerHTML += `<div class="p-10 border border-white/10 bg-white/5 shadow-2xl flex flex-col items-center text-center"><h4 class="serif text-3xl mb-4 italic text-[#C5A367] font-bold">${m.name}</h4><p class="text-4xl font-light mb-6 font-bold">${m.price}</p><p class="text-sm text-gray-400 leading-relaxed mb-8 italic">${m.desc}</p><a href="tel:01384254020" class="text-[10px] uppercase tracking-widest border border-[#C5A367] px-6 py-2 hover:bg-[#C5A367] transition">Inquire</a></div>`;
         });
 
-        // Mobile Menu
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
         menuBtn.onclick = () => navLinks.classList.toggle('translate-x-full');
 
-        // Start Clock & Load First Hole
         updateClock();
         setInterval(updateClock, 1000);
         setHole(1);
