@@ -14,6 +14,14 @@
         
         /* Fixed Mobile Menu Styles */
         @media (max-width: 767px) {
+            #nav-links {
+                background-color: #132419 !important; /* Ensure solid background on mobile */
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
             #nav-links.translate-x-full {
                 transform: translateX(100%) !important;
                 pointer-events: none;
@@ -56,14 +64,15 @@
             <div class="w-6 h-0.5 bg-[#C5A367]"></div>
         </button>
 
-        <div id="nav-links" class="fixed inset-0 bg-[#132419] z-[90] flex flex-col items-center justify-center gap-8 translate-x-full transition-transform ease-in-out duration-500 pointer-events-none md:static md:inset-auto md:bg-transparent md:flex-row md:translate-x-0 md:pointer-events-auto text-[12px] uppercase tracking-[0.4em] font-semibold">
-    <a href="#hospitality" class="hover:text-[#C5A367] transition">Hospitality</a> <a href="#" class="hover:text-[#C5A367] transition">Home</a>
-    <a href="#course" class="hover:text-[#C5A367] transition">Course Guide</a>
-    <a href="#heritage" class="hover:text-[#C5A367] transition">History</a>
-    <a href="#pro-shop" class="hover:text-[#C5A367] transition">Pro Shop</a>
-    <a href="#visitors" class="hover:text-[#C5A367] transition">Visitors</a>
-    <a href="#membership" class="hover:text-[#C5A367] transition">Membership</a>
-</div>
+        <div id="nav-links" class="fixed inset-0 z-[90] flex flex-col items-center justify-center gap-8 translate-x-full transition-transform ease-in-out duration-500 pointer-events-none md:static md:inset-auto md:bg-transparent md:flex-row md:translate-x-0 md:pointer-events-auto text-[12px] uppercase tracking-[0.4em] font-semibold">
+            <a href="#hospitality" class="hover:text-[#C5A367] transition">Hospitality</a> 
+            <a href="#" class="hover:text-[#C5A367] transition">Home</a>
+            <a href="#course" class="hover:text-[#C5A367] transition">Course Guide</a>
+            <a href="#heritage" class="hover:text-[#C5A367] transition">History</a>
+            <a href="#pro-shop" class="hover:text-[#C5A367] transition">Pro Shop</a>
+            <a href="#visitors" class="hover:text-[#C5A367] transition">Visitors</a>
+            <a href="#membership" class="hover:text-[#C5A367] transition">Membership</a>
+        </div>
         
         <a href="https://www.dudleygolfclub.com/login.php" target="_blank" class="relative z-[100] border border-[#C5A367] text-[#C5A367] px-4 md:px-5 py-2 text-[8px] md:text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition">Member Login</a>
     </nav>
@@ -121,34 +130,36 @@
             </div>
         </div>
     </section>
-<section id="hospitality" class="bg-[#F9F7F2] py-24 px-4 overflow-hidden border-t border-gray-200">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h4 class="text-[#C5A367] text-[10px] uppercase tracking-[0.4em] font-bold mb-4">Beyond the Fairway</h4>
-            <h2 class="serif text-6xl text-[#132419]">Hospitality & Events</h2>
-        </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="group relative h-[450px] overflow-hidden bg-[#132419]">
-                <img src="clubhouse.webp" alt="Clubhouse Lounge" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700">
-                <div class="absolute inset-0 flex flex-col justify-end p-10 bg-gradient-to-t from-[#132419] via-[#132419]/40 to-transparent">
-                    <h3 class="serif text-4xl text-white mb-2">The Clubhouse</h3>
-                    <p class="text-white/70 text-sm mb-8 font-light italic leading-relaxed">Experience panoramic views across the course from our recently refurbished first-floor lounge.</p>
-                    <a href="clubhouse.html" class="inline-block border border-[#C5A367] text-[#C5A367] px-8 py-4 text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition w-fit">Explore the Lounge</a>
-                </div>
+    <section id="hospitality" class="bg-[#F9F7F2] py-24 px-4 overflow-hidden border-t border-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h4 class="text-[#C5A367] text-[10px] uppercase tracking-[0.4em] font-bold mb-4">Beyond the Fairway</h4>
+                <h2 class="serif text-6xl text-[#132419]">Hospitality & Events</h2>
             </div>
 
-            <div class="group relative h-[450px] overflow-hidden bg-[#132419]">
-                <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80" alt="Function Room" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700">
-                <div class="absolute inset-0 flex flex-col justify-end p-10 bg-gradient-to-t from-[#132419] via-[#132419]/40 to-transparent">
-                    <h3 class="serif text-4xl text-white mb-2">Function Hire</h3>
-                    <p class="text-white/70 text-sm mb-8 font-light italic leading-relaxed">From weddings to celebrations, we cater for all of your special requirements in the heart of the Black Country.</p>
-                    <a href="functions.html" class="inline-block border border-[#C5A367] text-[#C5A367] px-8 py-4 text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition w-fit">Event Enquiries</a>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="group relative h-[450px] overflow-hidden bg-[#132419]">
+                    <img src="clubhouse.webp" alt="Clubhouse Lounge" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 flex flex-col justify-end p-10 bg-gradient-to-t from-[#132419] via-[#132419]/40 to-transparent">
+                        <h3 class="serif text-4xl text-white mb-2">The Clubhouse</h3>
+                        <p class="text-white/70 text-sm mb-8 font-light italic leading-relaxed">Experience panoramic views across the course from our recently refurbished first-floor lounge.</p>
+                        <a href="clubhouse.html" class="inline-block border border-[#C5A367] text-[#C5A367] px-8 py-4 text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition w-fit">Explore the Lounge</a>
+                    </div>
+                </div>
+
+                <div class="group relative h-[450px] overflow-hidden bg-[#132419]">
+                    <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80" alt="Function Room" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 flex flex-col justify-end p-10 bg-gradient-to-t from-[#132419] via-[#132419]/40 to-transparent">
+                        <h3 class="serif text-4xl text-white mb-2">Function Hire</h3>
+                        <p class="text-white/70 text-sm mb-8 font-light italic leading-relaxed">From weddings to celebrations, we cater for all of your special requirements in the heart of the Black Country.</p>
+                        <a href="functions.html" class="inline-block border border-[#C5A367] text-[#C5A367] px-8 py-4 text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition w-fit">Event Enquiries</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
     <section id="pro-shop" class="bg-white py-24 px-4 border-b border-gray-100">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col lg:flex-row gap-20 items-center">
@@ -391,7 +402,7 @@
         for (let i = 1; i <= 18; i++) {
             const div = document.createElement('div');
             div.id = `h-${i}`;
-            div.className = "hole-card p-4 border border-gray-200/50 cursor-pointer";
+            div.className = "hole-card p-4 border border-gray-200/50 cursor-pointer transition-all";
             div.innerHTML = `<p class="text-[10px] font-bold">Hole ${i}</p><p class="serif text-xs">${courseData[i].name}</p>`;
             div.onclick = () => setHole(i);
             navCont.appendChild(div);
@@ -402,7 +413,7 @@
             mGrid.innerHTML += `<div class="p-10 border border-white/10 bg-white/5 shadow-2xl flex flex-col items-center text-center"><h4 class="serif text-3xl mb-4 italic text-[#C5A367] font-bold">${m.name}</h4><p class="text-4xl font-light mb-6 font-bold">${m.price}</p><p class="text-sm text-gray-400 leading-relaxed mb-8 italic">${m.desc}</p><a href="tel:01384254020" class="text-[10px] uppercase tracking-widest border border-[#C5A367] px-6 py-2 hover:bg-[#C5A367] transition">Inquire</a></div>`;
         });
 
-        // Fixed Mobile Menu Logic
+        // FIXED MOBILE MENU LOGIC
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
 
@@ -424,12 +435,14 @@
             if (isClosed) openMenu(); else closeMenu();
         };
 
+        // Close menu when clicking a link
         document.querySelectorAll('#nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth < 768) closeMenu();
             });
         });
 
+        // Close menu when clicking outside (on the body)
         document.addEventListener('click', (e) => {
             if (window.innerWidth < 768 && !navLinks.classList.contains('translate-x-full') && !navLinks.contains(e.target) && e.target !== menuBtn) {
                 closeMenu();
